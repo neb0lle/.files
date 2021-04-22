@@ -1,23 +1,22 @@
 # ~/.bashrc
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
+shopt -s extglob
+
+# aliases
+alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
-# starship
-
-#aliases
 alias py="python3"
 alias iplookup="~/.iplookup.sh" 
 alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
-export EDITOR='vim'
 
+# vim
+export EDITOR='vim'
 set -o vi
 bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'

@@ -47,18 +47,6 @@ def resize_up(qtile):
 def resize_down(qtile):
     resize(qtile, "down")
 
-def float_to_front(qtile):
-    """
-    Bring all floating windows of the group to front
-    """
-    global floating_windows
-    floating_windows = []
-    for window in qtile.currentGroup.windows:
-        if window.floating:
-            window.cmd_bring_to_front()
-            floating_windows.append(window)
-    floating_windows[-1].cmd_focus()
-
 keys = [
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -92,12 +80,15 @@ keys = [
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout()),
-    Key([mod,"control"], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod],"y",lazy.window.bring_to_front(),desc="Bring window to front"),
+    Key([mod,"control"],"y",lazy.window.toggle_floating(),desc="Toggle floating on focused window",),
+    Key([mod,"control"], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
+    Key([mod],"m",lazy.layout.maximize(),desc="Toggle window between minimum and maximum sizes"),
+
+    # Qtile
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod],"y",lazy.window.toggle_floating(),desc="Toggle floating on focused window",),
-    Key([mod],"m",lazy.layout.maximize(),desc="Toggle window between minimum and maximum sizes"),
 
     # Group Changer
     Key([mod, "control"], "l", lazy.screen.next_group()),
@@ -164,7 +155,7 @@ layouts = [
 widget_defaults = dict(
     font='JetBrainsMono Nerd Font Medium',
     fontsize=14,
-)
+ )
 extension_defaults = widget_defaults.copy()
 
 screens = [
@@ -339,12 +330,15 @@ mouse = [
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
+# Configuration Variables
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
-main = None  # WARNING: this is deprecated and will be removed soon
 follow_mouse_focus = False
 bring_front_click = True
 cursor_warp = False
+auto_fullscreen = True
+auto_minimize = False
+focus_on_window_activation = "focus"
 
 floating_layout = layout.Floating(
     **layout_theme,
@@ -358,8 +352,6 @@ floating_layout = layout.Floating(
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
 ])
-auto_fullscreen = True
-focus_on_window_activation = "focus"
 
 @hook.subscribe.startup_once
 def autostart():
