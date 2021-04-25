@@ -130,7 +130,7 @@ for i, (name,kwargs) in enumerate(group_names,1):
 
 layout_theme = {
         "border_width":2,
-        "margin":4,
+        "margin":6,
         "border_normal":"131519",
         "border_focus":"46474f",
         "font": "JetBrainsMono Nerd Font",
@@ -313,11 +313,11 @@ screens = [
                          ),
             ],
             24,
-            margin=[0,0,2,0],
+            margin=[0,0,4,0],
         ),
-        bottom = bar.Gap(2),
-        left = bar.Gap(2),
-        right = bar.Gap(2),
+        bottom = bar.Gap(4),
+        left = bar.Gap(4),
+        right = bar.Gap(4),
     ),
 ]
 
