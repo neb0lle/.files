@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 	" Auto pairs for '(' '[' '{'
 	Plug 'jiangmiao/auto-pairs'
 	" Rich Presence
-	Plug 'hugolgst/vimsence'    
+	Plug 'vimsence/vimsence'
 	" AirLine 
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
