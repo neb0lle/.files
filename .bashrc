@@ -15,8 +15,11 @@ alias py="python3"
 alias iplookup="~/.iplookup.sh" 
 alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
 
-# vim
+# exports
 export EDITOR='vim'
+export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
+
+# vim
 set -o vi
 bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
