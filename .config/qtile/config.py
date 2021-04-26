@@ -139,10 +139,10 @@ layout_theme = {
         "grow_amount": 2,
         }
 layouts = [
-    # layout.Columns(),
     layout.Bsp(**layout_theme,fair=False),
     layout.Stack(num_stacks=2,**layout_theme),
     layout.Max(**layout_theme),
+    # layout.Columns(),
    # layout.Floating(**layout_theme),
    # layout.Matrix(),
    # layout.MonadTall(),
