@@ -80,6 +80,8 @@ keys = [
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout()),
+    Key([mod, "shift"], "Tab", lazy.prev_layout()),
+
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod],"y",lazy.window.bring_to_front(),desc="Bring window to front"),
     Key([mod,"control"],"y",lazy.window.toggle_floating(),desc="Toggle floating on focused window",),
