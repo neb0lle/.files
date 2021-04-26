@@ -56,7 +56,7 @@
     XF86AudioStop
 
 # ROFI
-"rofi -theme '~/.config/rofi/themes/sed1.rasi' -combi-modi window,drun -show combi -modi combi -window-format {t}"
+"rofi -theme '~/.config/rofi/themes/sed1.rasi' -combi-modi window,drun -show combi -modi combi -window-format {t} -show-icons"
     Mod4+space
 """rofi -theme '~/.config/rofi/themes/sed1.rasi' -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'"""
     Mod4+c

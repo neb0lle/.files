@@ -45,3 +45,6 @@
     background-color: @selected-normal-background;
     text-color:       @selected-normal-foreground;
 }
+#element-icon{
+    size:2.3ch;
+}
