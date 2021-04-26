@@ -20,9 +20,7 @@
 # A list of keys is in /usr/include/X11/keysym.h and in
 # /usr/include/X11/keysymdef.h
 # The XK_ is not needed.
-#
-# List of modifier:
-#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+# List of modifier: Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
 #   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
 #
 
@@ -56,9 +54,9 @@
     XF86AudioStop
 
 # ROFI
-"rofi -theme '~/.config/rofi/themes/sed1.rasi' -combi-modi window,drun -show combi -modi combi -window-format {t} -show-icons"
+"rofi -theme '~/.config/rofi/themes/sed.rasi' -combi-modi window,drun -show combi -modi combi -window-format {t} -show-icons -display-combi 'RUN:'"
     Mod4+space
-"""rofi -theme '~/.config/rofi/themes/sed1.rasi' -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'"""
+"""rofi -theme '~/.config/rofi/themes/sed.rasi' -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'"""
     Mod4+c
 
 # Application Bindings
