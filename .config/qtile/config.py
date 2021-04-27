@@ -256,6 +256,13 @@ screens = [
                         padding =-3,
                         fontsize = 20,
                         ),
+                widget.TextBox(
+                       text = "  ",
+                       foreground = colors[7],
+                       background = colors[3],
+                       padding = 0,
+                       fontsize = 14
+                       ),
                 widget.Clock(
                     foreground=colors[7],
                     background=colors[3],
