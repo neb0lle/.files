@@ -83,8 +83,7 @@ keys = [
     Key([mod, "shift"], "Tab", lazy.prev_layout()),
 
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod],"y",lazy.window.bring_to_front(),desc="Bring window to front"),
-    Key([mod,"control"],"y",lazy.window.toggle_floating(),desc="Toggle floating on focused window",),
+    Key([mod],"y",lazy.window.toggle_floating(),desc="Toggle floating on focused window",),
     Key([mod,"control"], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
     Key([mod],"m",lazy.layout.maximize(),desc="Toggle window between minimum and maximum sizes"),
 
@@ -212,8 +211,7 @@ screens = [
                        text = '|',
                        background = colors[3],
                        foreground = colors[4],
-                       padding =-3,
-                       fontsize = 20,
+                       padding =-3, fontsize = 20,
                        ),
                 widget.TextBox(
                        text = "  ",
@@ -285,6 +283,7 @@ screens = [
                          ),
             ],
             30,
+            # opacity=0.6,
             margin=[6,6,2,6],
         ),
         bottom = bar.Gap(2),
@@ -306,7 +305,7 @@ mouse = [
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
 follow_mouse_focus = False
-bring_front_click = True
+bring_front_click = False
 cursor_warp = False
 auto_fullscreen = True
 auto_minimize = False
@@ -323,6 +322,7 @@ floating_layout = layout.Floating(
     Match(wm_class='ssh-askpass'),  # ssh-askpass
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
+    Match(title='Qalculate'),
 ])
 
 @hook.subscribe.startup_once
