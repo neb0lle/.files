@@ -301,16 +301,6 @@ mouse = [
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
-# Configuration Variables
-dgroups_key_binder = None
-dgroups_app_rules = []  # type: List
-follow_mouse_focus = False
-bring_front_click = False
-cursor_warp = False
-auto_fullscreen = True
-auto_minimize = False
-focus_on_window_activation = "focus"
-
 floating_layout = layout.Floating(
     **layout_theme,
     float_rules=[
@@ -324,6 +314,17 @@ floating_layout = layout.Floating(
     Match(title='pinentry'),  # GPG key password entry
     Match(title='Qalculate'),
 ])
+
+# Configuration Variables
+dgroups_key_binder = None
+dgroups_app_rules = []  # type: List
+follow_mouse_focus = False
+bring_front_click = False
+cursor_warp = False
+auto_fullscreen = True
+auto_minimize = False
+focus_on_window_activation = "focus"
+
 
 @hook.subscribe.startup_once
 def autostart():
