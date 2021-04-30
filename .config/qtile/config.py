@@ -107,7 +107,8 @@ colors = [["#000000","#000000"], # BLACK
           ["#46474f","#46474f"], # LIGHT GREY
           ["#ffff44","#ffff44"], # YELLOW
           ["#ff4444","#ff4444"], # SALMON
-          ["#00a2ff","#00a2ff"]] # BLUE
+          ["#00a2ff","#00a2ff"], # BLUE
+          ["#ff54c4","#ff54c4"]] # MAGENTA
 
 def init_group_names():
     return [("I",{'layout':'bsp'}),
@@ -184,6 +185,11 @@ screens = [
                     padding = 24,
                     background=colors[3],
                     ),
+                widget.Sep(
+                    background=colors[3],
+                    foreground=colors[3],
+                    linewidth=8,
+                    ),
                 widget.Systray(
                     background=colors[3],
                     padding=10,
@@ -211,8 +217,29 @@ screens = [
                        text = '|',
                        background = colors[3],
                        foreground = colors[4],
-                       padding =-3, fontsize = 20,
+                       padding =-3,
+                       fontsize = 20,
                        ),
+                widget.TextBox(
+                       text = "  ",
+                       foreground = colors[8],
+                       background = colors[3],
+                       padding = -3,
+                       fontsize = 16
+                       ),
+                widget.Volume(
+                    background = colors[3],
+                    foreground = colors[8],
+                    padding = 8,
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('pavucontrol')},
+                ),
+                 widget.TextBox(
+                        text = '|',
+                        background = colors[3],
+                        foreground = colors[4],
+                        padding =-3,
+                        fontsize = 20,
+                        ),
                 widget.TextBox(
                        text = "  ",
                        foreground = colors[2],
