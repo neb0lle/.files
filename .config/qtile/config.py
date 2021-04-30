@@ -220,7 +220,7 @@ screens = [
                        padding = 0,
                        fontsize = 14
                        ),
-              widget.CPU(
+                widget.CPU(
                        foreground = colors[2],
                        background = colors[3],
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + ' -e bashtop')},
