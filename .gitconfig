@@ -1,0 +1,9 @@
+[user]
+	name = NevilleJS
+	email = nevillejs24@gmail.com
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = false
