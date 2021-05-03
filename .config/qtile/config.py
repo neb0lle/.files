@@ -135,14 +135,14 @@ layout_theme = {
         "margin":4,
         "border_normal":"131519",
         "border_focus":"46474f",
-        "font": "JetBrainsMono Nerd Font",
-        "grow_amount": 2,
+        "grow_amount": 4,
         }
 layouts = [
     layout.Bsp(**layout_theme,fair=False),
+    layout.Stack(num_stacks=1,margin=4,border_width=0),
     layout.Stack(num_stacks=2,**layout_theme),
-    layout.Max(**layout_theme),
-    # layout.Columns(),
+   # layout.Max(**layout_theme),
+   # layout.Columns(),
    # layout.Floating(**layout_theme),
    # layout.Matrix(),
    # layout.MonadTall(),
@@ -151,7 +151,7 @@ layouts = [
    # layout.Tile(),
    # layout.TreeTab(),
    # layout.VerticalTile(),
-   # layout.Zoomy(),
+   # layout.Zoomy(**layout_theme),
 ]
 
 widget_defaults = dict(
