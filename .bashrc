@@ -52,6 +52,7 @@ ex ()
 }
 
 colorscript random
-
-eval "$(starship init bash)"
 # neofetch
+
+# Startup Prompt
+eval "$(starship init bash)"
