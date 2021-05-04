@@ -26,6 +26,21 @@ set -o vi
 bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
 
+# ssh
+ssh-add -l &>/dev/null
+if [ "$?" == 2 ]; then
+  test -r ~/.ssh-agent && \
+    eval "$(<~/.ssh-agent)" >/dev/null
+
+  ssh-add -l &>/dev/null
+  if [ "$?" == 2 ]; then
+    (umask 066; ssh-agent > ~/.ssh-agent)
+    eval "$(<~/.ssh-agent)" >/dev/null
+    ssh-add
+    ssh-add ~/.ssh/github
+  fi
+fi
+
 # Archive extraction
 ex ()
 {
