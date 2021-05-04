@@ -141,9 +141,9 @@ layouts = [
     layout.Bsp(**layout_theme,fair=False),
     layout.Stack(num_stacks=1,margin=4,border_width=0),
     layout.Stack(num_stacks=2,**layout_theme),
-   # layout.Max(**layout_theme),
+   # layout.Max(),
    # layout.Columns(),
-   # layout.Floating(**layout_theme),
+   # layout.Floating(),
    # layout.Matrix(),
    # layout.MonadTall(),
    # layout.MonadWide(),
@@ -151,7 +151,7 @@ layouts = [
    # layout.Tile(),
    # layout.TreeTab(),
    # layout.VerticalTile(),
-   # layout.Zoomy(**layout_theme),
+   # layout.Zoomy(),
 ]
 
 widget_defaults = dict(
