@@ -6,6 +6,7 @@
 # PS1='[\u@\h \W]\$ '
 
 shopt -s extglob
+shopt -s autocd
 
 # aliases
 alias ls='ls --color=auto'
@@ -16,10 +17,6 @@ alias py="python3"
 alias iplookup="~/.iplookup.sh" 
 alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
 
-# exports
-export EDITOR='vim'
-export VISUAL='vim'
-export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
 
 # vim
 set -o vi
