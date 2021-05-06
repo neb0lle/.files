@@ -165,9 +165,10 @@ screens = [
         top=bar.Bar(
             [
                 widget.GroupBox(
-                    font = "JetBrainsMono Nerd Font Bold",
+                    font = "Open Sans, Bold",
+                    padding=4,
                     margin_y=3,
-                    fontsize=16,
+                    fontsize=15,
                     highlight_color=colors[5],
                     block_highlight_text_color=colors[6],
                     inactive=colors[4],
@@ -181,6 +182,11 @@ screens = [
                     urgent_text=colors[5],
                     urgent_border=colors[3],
                     ),
+                widget.Sep(
+                    background=colors[3],
+                    foreground=colors[3],
+                    linewidth=15,
+                ),
                 widget.WindowName(
                     padding = 24,
                     background=colors[3],
