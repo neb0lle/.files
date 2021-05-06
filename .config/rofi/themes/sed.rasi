@@ -40,7 +40,7 @@
     width: 10em;
 }
 #element {
-    padding: 5px 8px;
+    padding: 6px 8px;
 }
 #element selected {
     background-color: @selected-normal-background;
