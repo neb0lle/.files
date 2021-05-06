@@ -164,6 +164,11 @@ screens = [
     Screen(
         top=bar.Bar(
             [
+                widget.Sep(
+                    background=colors[3],
+                    foreground=colors[3],
+                    linewidth=4,
+                ),
                 widget.GroupBox(
                     font = "Open Sans, Bold",
                     padding=4,
