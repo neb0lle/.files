@@ -172,7 +172,7 @@ screens = [
                 widget.GroupBox(
                     font = "Nimbus Sans, Bold",
                     padding=4,
-                    margin_y=6,
+                    margin_y=5,
                     fontsize=16,
                     highlight_color=colors[5],
                     block_highlight_text_color=colors[6],
