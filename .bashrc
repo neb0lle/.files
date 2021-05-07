@@ -8,6 +8,14 @@
 shopt -s extglob
 shopt -s autocd
 
+# exports
+export EDITOR='vim'
+export VISUAL='vim'
+export BROWSER='brave'
+export TRUEBROWSER='brave'
+export READER='evince'
+export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
+
 # aliases
 alias ls='ls --color=auto'
 alias ll='ls -alF'
