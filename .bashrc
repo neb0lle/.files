@@ -13,7 +13,7 @@ export EDITOR='vim'
 export VISUAL='vim'
 export BROWSER='brave'
 export TRUEBROWSER='brave'
-export READER='evince'
+#export READER='evince'
 export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
 
 # aliases
@@ -72,24 +72,8 @@ ex ()
   fi
 }
 
-colorscript random 
+# colorscript random 
 # neofetch
 
 # Startup Prompt
 eval "$(starship init bash)"
-
-# MiniConda
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/neville/.miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/neville/.miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/neville/.miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/neville/.miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<

@@ -1,7 +1,5 @@
 # ~/.bash_profile
 
-source "$HOME/.cargo/env"
-
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 if [ -n "$DESKTOP_SESSION" ];then

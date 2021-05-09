@@ -7,4 +7,4 @@ greenclip daemon &
 dunst &
 xbindkeys &
 flameshot &
-noisetorch -i &
+# noisetorch -i &
