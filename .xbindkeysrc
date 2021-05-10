@@ -53,6 +53,12 @@
 "playerctl -p spotify,ALL stop"
     XF86AudioStop
 
+# Brightness
+"blight -d amdgpu_bl0 set +10%"
+    XF86MonBrightnessUp
+"blight -d amdgpu_bl0 set -10%"
+    XF86MonBrightnessDown
+
 # ROFI
 "rofi -theme '~/.config/rofi/themes/sed.rasi' -combi-modi window,drun -show combi -modi combi -window-format {t} -show-icons -display-combi 'RUN:'"
     Mod4+space
