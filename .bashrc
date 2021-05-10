@@ -46,6 +46,11 @@ if [ "$?" == 2 ]; then
   fi
 fi
 
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_OPS="--extended"
+
 # Archive extraction
 ex ()
 {

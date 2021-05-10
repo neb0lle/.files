@@ -19,6 +19,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tomtom/tcomment_vim'
 	" Syntax Check (ale)
 	Plug 'dense-analysis/ale'
+	" fzf
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	call plug#end()
 
 source $HOME/.vim/themes/airline.vim
