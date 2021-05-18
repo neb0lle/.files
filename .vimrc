@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 	" AirLine 
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+    source $HOME/.vim/themes/airline.vim
 	" CSS color
 	Plug 'ap/vim-css-color'
 	" Surround
@@ -19,16 +20,23 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tomtom/tcomment_vim'
 	" Syntax Check (ale)
 	Plug 'dense-analysis/ale'
+	" CoC
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	source $HOME/.vim/plug-config/coc.vim
 	" fzf
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	call plug#end()
-
-source $HOME/.vim/themes/airline.vim
+   " theme
+    Plug 'rakr/vim-one'
+    call plug#end()
 
 :map<C-n>	:NERDTree<CR>
 set clipboard=unnamedplus
 set number
 set tabstop=4
+set shiftwidth=4
+set expandtab
+set cmdheight=1
+set background=dark
 
 "Compile and Run
 set autowrite
