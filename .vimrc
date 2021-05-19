@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 	" Auto pairs for '(' '[' '{'
 	Plug 'jiangmiao/auto-pairs'
 	" Rich Presence
-	Plug 'vimsence/vimsence'
+	" Plug 'vimsence/vimsence'
 	" AirLine 
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
@@ -28,8 +28,8 @@ call plug#begin('~/.vim/plugged')
    " theme
     Plug 'rakr/vim-one'
     call plug#end()
-
-:map<C-n>	:NERDTree<CR>
+    
+:map<C-n>    :NERDTree<CR>
 set clipboard=unnamedplus
 set number
 set tabstop=4
