@@ -21,8 +21,8 @@ call plug#begin('~/.vim/plugged')
 	" Syntax Check (ale)
 	Plug 'dense-analysis/ale'
 	" CoC
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	source $HOME/.vim/plug-config/coc.vim
+	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	" source $HOME/.vim/plug-config/coc.vim
 	" fzf
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
    " theme
