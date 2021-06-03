@@ -3,6 +3,7 @@
 nitrogen --restore &
 picom --experimental-backends &
 nm-applet &
+# blueman-applet &
 greenclip daemon &
 dunst &
 xbindkeys &

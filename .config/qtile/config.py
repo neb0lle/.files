@@ -242,6 +242,7 @@ screens = [
                     empty_char = "",
                     noify_below = 10,
                     format = '{char} {percent:1.0%}',
+                    update_interval =1,
                 ),
                  widget.TextBox(
                        text = '|',
