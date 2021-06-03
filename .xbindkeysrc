@@ -58,7 +58,8 @@
     Mod4+space
 """rofi -theme '~/.config/rofi/themes/sed.rasi' -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'"""
     Mod4+c
-
+"""rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi/themes/sed.rasi -calc-command 'echo -n "{result}" | xclip -selection clipboard'"""
+    Mod4+equal
 # Application Bindings
 "kitty"
     Mod4+Return
