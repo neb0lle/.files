@@ -93,9 +93,6 @@ keys = [
     Key([mod, "control"], "h", lazy.screen.prev_group()),
     Key([mod], "u", lazy.next_urgent()),
 
-    # Rofi-Calc
-    Key([mod],"equal",lazy.spawn('''rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi/themes/sed.rasi -calc-command "echo -n '{result}' | xclip -selection clipboard"'''),desc="Rofi calc"),
-
 ]
 colors = [["#000000","#000000"], # BLACK
           ["#ffffff","#ffffff"], # WHITE
