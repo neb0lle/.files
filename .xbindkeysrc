@@ -60,6 +60,8 @@
     Mod4+c
 """rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi/themes/sed.rasi -calc-command 'echo -n "{result}" | xclip -selection clipboard'"""
     Mod4+equal
+"rofi-pass"
+    Mod4+p
 # Application Bindings
 "kitty"
     Mod4+Return
