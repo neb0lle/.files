@@ -80,7 +80,7 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod],"y",lazy.window.toggle_floating(),desc="Toggle floating on focused window",),
     Key([mod,"control"], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
-    Key([mod],"m",lazy.layout.maximize(),desc="Toggle window between minimum and maximum sizes"),
+    Key([mod],"m",lazy.window.toggle_maximize(),desc="Toggle Minimize"),
 
     # Qtile
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
