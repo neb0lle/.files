@@ -9,6 +9,7 @@ from libqtile.command import lazy
 from libqtile.lazy import lazy
 
 mod = "mod4"
+alt = "mod1"
 terminal = "kitty"
 
 # Resize functions for bsp layout
@@ -65,35 +66,58 @@ keys = [
 
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
-    Key([mod, "mod1"], "h",resize_left,desc="Grow window to the left"),
-    Key([mod, "mod1"], "l",resize_right,desc="Grow window to the right"),
-    Key([mod, "mod1"], "j",resize_down,desc="Grow window down"),
-    Key([mod, "mod1"], "k",resize_up, desc="Grow window up"),
+    Key([mod, alt], "h",resize_left,desc="Grow window to the left"),
+    Key([mod, alt], "l",resize_right,desc="Grow window to the right"),
+    Key([mod, alt], "j",resize_down,desc="Grow window down"),
+    Key([mod, alt], "k",resize_up, desc="Grow window up"),
 
     # Rotation of windows
-    Key([mod], "r",lazy.layout.rotate()),
-    Key([mod,"control"], "j",lazy.layout.flip_left()),
-    Key([mod,"control"], "k",lazy.layout.flip_right()),
+    Key([mod], "r",lazy.layout.rotate(),desc="Rotate windows in Stack mode"),
+    Key([mod,"control"], "j",lazy.layout.flip_left(),desc="Flip windows towards left"),
+    Key([mod,"control"], "k",lazy.layout.flip_right(),desc="Flip windows towards right"),
 
     # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout()),
-    Key([mod, "shift"], "Tab", lazy.prev_layout()),
-
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod],"y",lazy.window.toggle_floating(),desc="Toggle floating on focused window",),
-    Key([mod,"control"], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
     Key([mod],"m",lazy.window.toggle_minimize(),desc="Toggle Minimize"),
+    Key([mod,"control"], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
+    Key([mod], "Tab", lazy.next_layout(),desc="Toggle next layout"),
+    Key([mod, "shift"], "Tab", lazy.prev_layout(),"Toggle previous layout"),
 
     # Qtile
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 
     # Group Changer
-    Key([mod, "control"], "l", lazy.screen.next_group()),
-    Key([mod, "control"], "h", lazy.screen.prev_group()),
-    Key([mod], "u", lazy.next_urgent()),
+    Key([mod, "control"], "l", lazy.screen.next_group(),desc="Switch to next group"),
+    Key([mod, "control"], "h", lazy.screen.prev_group(),desc="Switch to previous group"),
+    Key([mod], "u", lazy.next_urgent(),desc="Switch to urgent window"),
 
 ]
+
+# Display kebindings in rofi menu
+def show_keys():
+    key_help = ""
+    for k in keys:
+        mods = ""
+
+        for m in k.modifiers:
+            if m == "mod4":
+                mods += "Super + "
+            else:
+                mods += m.capitalize() + " + "
+
+        if len(k.key) > 1:
+            mods += k.key.capitalize()
+        else:
+            mods += k.key
+
+        key_help += "{:<30} {}".format(mods, k.desc + "\n")
+
+    return key_help
+
+]
+
 colors = [["#000000","#000000"], # BLACK
           ["#ffffff","#ffffff"], # WHITE
           ["#01fdb0","#01fdb0"], # MINT
