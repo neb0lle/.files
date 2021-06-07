@@ -116,8 +116,6 @@ def show_keys():
 
     return key_help
 
-]
-
 colors = [["#000000","#000000"], # BLACK
           ["#ffffff","#ffffff"], # WHITE
           ["#01fdb0","#01fdb0"], # MINT
