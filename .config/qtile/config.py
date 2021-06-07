@@ -82,7 +82,7 @@ keys = [
     Key([mod],"m",lazy.window.toggle_minimize(),desc="Toggle Minimize"),
     Key([mod,"control"], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
     Key([mod], "Tab", lazy.next_layout(),desc="Toggle next layout"),
-    Key([mod, "shift"], "Tab", lazy.prev_layout(),"Toggle previous layout"),
+    Key([mod, "shift"], "Tab", lazy.prev_layout(),desc="Toggle previous layout"),
 
     # Qtile
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
@@ -96,25 +96,59 @@ keys = [
 ]
 
 # Display kebindings in rofi menu
-def show_keys():
-    key_help = ""
-    for k in keys:
-        mods = ""
+def show_keys(keys):
+  """
+  print current keybindings in a pretty way for a rofi/dmenu window.
+  """
+  key_help = ""
+  keys_ignored = (
+      "XF86AudioMute",  #
+      "XF86AudioLowerVolume",  #
+      "XF86AudioRaiseVolume",  #
+      "XF86AudioPlay",  #
+      "XF86AudioNext",  #
+      "XF86AudioPrev",  #
+      "XF86AudioStop",
+  )
+  text_replaced = {
+      "mod4": "[S]",  #
+      "control": "[Ctl]",  #
+      "mod1": "[Alt]",  #
+      "shift": "[Shf]",  #
+      "twosuperior": "²",  #
+      "less": "<",  #
+      "ampersand": "&",  #
+      "Escape": "Esc",  #
+      "Return": "Enter",  #
+  }
+  for k in keys:
+    if k.key in keys_ignored:
+      continue
 
-        for m in k.modifiers:
-            if m == "mod4":
-                mods += "Super + "
-            else:
-                mods += m.capitalize() + " + "
+    mods = ""
+    key = ""
+    desc = k.desc.title()
+    for m in k.modifiers:
+      if m in text_replaced.keys():
+        mods += text_replaced[m] + " + "
+      else:
+        mods += m.capitalize() + " + "
 
-        if len(k.key) > 1:
-            mods += k.key.capitalize()
-        else:
-            mods += k.key
+    if len(k.key) > 1:
+      if k.key in text_replaced.keys():
+        key = text_replaced[k.key]
+      else:
+        key = k.key.title()
+    else:
+      key = k.key
 
-        key_help += "{:<30} {}".format(mods, k.desc + "\n")
+    key_line = "{:<30} {}".format(mods + key, desc + "\n")
+    key_help += key_line
 
-    return key_help
+    # debug_print(key_line)  # debug only
+
+  return key_help
+keys.extend([Key([mod], "F1", lazy.spawn("sh -c 'echo \"" + show_keys(keys) + "\" | rofi -dmenu -i -mesg \"Keyboard shortcuts\"'"), desc="Print keyboard bindings")])
 
 colors = [["#000000","#000000"], # BLACK
           ["#ffffff","#ffffff"], # WHITE
