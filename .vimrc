@@ -37,6 +37,8 @@ set shiftwidth=4
 set expandtab
 set cmdheight=1
 set background=dark
+set ignorecase
+set smartcase
 
 "Compile and Run
 set autowrite
