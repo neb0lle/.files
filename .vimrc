@@ -29,6 +29,12 @@ source $HOME/.vim/themes/airline.vim
 set clipboard=unnamedplus
 set number
 set tabstop=4
+set shiftwidth=4
+set expandtab
+set cmdheight=1
+set background=dark
+set ignorecase
+set smartcase
 
 "Compile and Run
 set autowrite
