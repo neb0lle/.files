@@ -302,7 +302,7 @@ screens = [
                     charge_char = "",
                     discharge_char = "",
                     empty_char = "",
-                    noify_below = 10,
+                    notify_below = 10,
                     format = '{char} {percent:1.0%}',
                     update_interval =1,
                 ),
