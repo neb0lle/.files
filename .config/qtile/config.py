@@ -145,6 +145,18 @@ def show_keys(keys):
 
     # debug_print(key_line)  # debug only
 
+  xbind_keys = [["[S] + Space","Application Launcher"],
+                ["[S] + c","Show Clipboard History"],
+                ["[S] + =","Open Calculator"],
+                ["[S] + Return","Open Terminal"],
+                ["[S] + f","Open File Manager"],
+                ["[S] + b","Open Browser"],
+                ["PrtScr","Fullscreen Screenshot"],
+                ["[Ctl] + PrtScr","Screenshot"],
+                ]
+  for i in xbind_keys:
+      key_help += "{:<30} {}".format(i[0],i[1]+"\n")
+
   return key_help
 keys.extend([Key([mod], "F1", lazy.spawn("sh -c 'echo \"" + show_keys(keys) + "\" | rofi -dmenu -i -mesg \"Keyboard shortcuts\"'"), desc="Print keyboard bindings")])
 
