@@ -25,8 +25,6 @@ call plug#begin('~/.vim/plugged')
 	" source $HOME/.vim/plug-config/coc.vim
 	" fzf
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-   " theme
-    Plug 'rakr/vim-one'
     call plug#end()
     
 :map<C-n>    :NERDTree<CR>
