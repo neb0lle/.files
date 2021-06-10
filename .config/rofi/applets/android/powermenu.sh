@@ -60,7 +60,7 @@ case $chosen in
         # fi
         ;;
     $lock)
-        dm-tool lock
+        light-locker-command -l
 		# if [[ -f /usr/bin/i3lock ]]; then
 		# 	i3lock
 		# elif [[ -f /usr/bin/betterlockscreen ]]; then

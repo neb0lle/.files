@@ -203,7 +203,7 @@ layouts = [
     layout.Bsp(**layout_theme,fair=False),
     layout.Stack(num_stacks=1,margin=4,border_width=0),
     layout.Stack(num_stacks=2,**layout_theme),
-   # layout.Max(),
+   # layout.Max(**layout_theme),
    # layout.Columns(),
    # layout.Floating(),
    # layout.Matrix(),
