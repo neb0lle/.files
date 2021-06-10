@@ -19,4 +19,4 @@
  *
  */
 
-@import "../styles/adwaita.rasi"
+@import "../styles/sed.rasi"
