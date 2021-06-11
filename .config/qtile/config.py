@@ -380,7 +380,7 @@ screens = [
                         foreground=colors[6],
                         background=colors[3],
                         padding=10,
-                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('/home/neville/.config/rofi/bin/android_powermenu')},
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('/home/neville/.config/rofi/bin/android_powermenu'),'Button3': lambda: qtile.cmd_spawn('/home/neville/.config/rofi/applets/android/FFC_menu.sh')},
                          ),
             ],
             30,

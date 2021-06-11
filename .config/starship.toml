@@ -9,5 +9,7 @@ add_newline = false
 [package]
 disabled = false
 
+[git_branch]
+symbol = " "
 [python]
 symbol = " "
