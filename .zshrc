@@ -51,22 +51,6 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-# EXPORTS
-export EDITOR='vim'
-export VISUAL='vim'
-export BROWSER='brave'
-export TRUEBROWSER='brave'
-export READER='evince'
-export MANPAGER='/bin/zsh -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
-
-# aliases
-alias ls='ls --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias py='python3'
-alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
-
 # Archive extraction
 ex ()
 {
@@ -92,6 +76,22 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+# EXPORTS
+export EDITOR='vim'
+export VISUAL='vim'
+export BROWSER='brave'
+export TRUEBROWSER='brave'
+export READER='evince'
+export MANPAGER='/bin/zsh -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
+
+# aliases
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias py='python3'
+alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
 
 # Startup
 colorscript random
