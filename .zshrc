@@ -2,7 +2,7 @@
 
 # Enable colors and change prompt:
 autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+PS1="%F{yellow}%n%f%F{magenta}@%f%F{blue}%m%f %~ %F{green}❯%f "
 
 # History stuff:
 HISTSIZE=5000
@@ -76,8 +76,13 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+gssh(){
+    echo eval "$(ssh-agent -s)"
+    echo ssh-add ~/.ssh/github
+}
 
 # EXPORTS
+export LANG=en_US.UTF-8
 export EDITOR='vim'
 export VISUAL='vim'
 export BROWSER='brave'
