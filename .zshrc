@@ -16,7 +16,7 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-# VI mode
+# VI mode:
 bindkey -v
 export KEYTIMEOUT=1
 
@@ -47,11 +47,11 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-# Edit line in vim with ctrl-e:
+# Edit line in vim:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-# Archive extraction
+# Archive extraction:
 ex ()
 {
   if [ -f $1 ] ; then
@@ -76,10 +76,17 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
-gssh(){
-    echo eval "$(ssh-agent -s)"
-    echo ssh-add ~/.ssh/github
+
+# Open ranger in current directory:
+run_ranger () {
+    echo
+    ranger --choosedir=$HOME/.rangerdir < $TTY
+    LASTDIR=`cat $HOME/.rangerdir`
+    cd "$LASTDIR"
+    zle reset-prompt
 }
+zle -N run_ranger
+bindkey '^b' run_ranger
 
 # EXPORTS
 export LANG=en_US.UTF-8
