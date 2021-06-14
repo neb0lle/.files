@@ -71,7 +71,7 @@
     Print
 "brave"
     Mod4+b
-"kitty -e ranger"
+"nemo"
     Mod4+f
 
 ##################################
