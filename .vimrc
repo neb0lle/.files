@@ -26,7 +26,7 @@ call plug#begin('~/.vim/plugged')
 	" fzf
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     call plug#end()
-    
+
 :map<C-n>    :NERDTree<CR>
 set clipboard=unnamedplus
 set number
