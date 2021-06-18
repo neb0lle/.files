@@ -200,19 +200,11 @@ layout_theme = {
         "grow_amount": 4,
         }
 layouts = [
-    layout.Bsp(**layout_theme,fair=False),
-    layout.Stack(num_stacks=1,margin=4,border_width=0),
-    layout.Stack(num_stacks=2,**layout_theme),
+    layout.Bsp(**layout_theme,fair=False,name=''),
+    layout.Stack(num_stacks=1,margin=4,border_width=0,name=''),
+    layout.Stack(num_stacks=2,**layout_theme,name='洛'),
    # layout.Max(**layout_theme),
-   # layout.Columns(),
-   # layout.Floating(),
-   # layout.Matrix(),
-   # layout.MonadTall(),
-   # layout.MonadWide(),
    # layout.RatioTile(),
-   # layout.Tile(),
-   # layout.TreeTab(),
-   # layout.VerticalTile(),
    # layout.Zoomy(),
 ]
 
@@ -279,13 +271,23 @@ screens = [
                        padding =-3,
                        fontsize = 20,
                        ),
-                widget.CurrentLayoutIcon(
-                       custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
-                       foreground = colors[0],
+                widget.CurrentLayout(
+                       fontsize = 20,
+                       foreground = colors[1],
                        background = colors[3],
-                       padding = 3,
-                       scale = 0.6
-                       ),
+                ),
+                widget.Sep(
+                    background=colors[3],
+                    foreground=colors[3],
+                    linewidth=1,
+                    ),
+                # widget.CurrentLayoutIcon(
+                #        custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
+                #        foreground = colors[0],
+                #        background = colors[3],
+                #        padding = 3,
+                #        scale = 0.6
+                #        ),
                  widget.TextBox(
                        text = '|',
                        background = colors[3],
@@ -431,13 +433,4 @@ focus_on_window_activation = "focus"
 def autostart():
     home = os.path.expanduser('~')
     subprocess.call([home+'/.config/qtile/autostart.sh'])
-
-# XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
-# string besides java UI toolkits; you can see several discussions on the
-# mailing lists, GitHub issues, and other WM documentation that suggest setting
-# this string if your java app doesn't work correctly. We may as well just lie
-# and say that we're a working one by default.
-#
-# We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
-# java that happens to be on java's whitelist.
 wmname = "Qtile"

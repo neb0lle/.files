@@ -28,9 +28,9 @@ call plug#begin('~/.vim/plugged')
     call plug#end()
 
 :map<C-n>    :NERDTree<CR>
+syntax on
 set clipboard=unnamedplus
-set number
-set relativenumber
+set number relativenumber
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -38,6 +38,8 @@ set cmdheight=1
 set background=dark
 set ignorecase
 set smartcase
+set splitbelow
+set splitright
 
 "Compile and Run
 set autowrite
