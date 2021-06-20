@@ -36,7 +36,7 @@ let &t_EI = "\<Esc>[2 q"
 syntax on
 filetype plugin on
 set nocompatible
-set clipboard=unnamed
+set clipboard=unnamedplus
 set number relativenumber
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -48,14 +48,8 @@ set ignorecase
 set smartcase
 set noswapfile
 set splitbelow
-<<<<<<< HEAD
 set splitright
 set incsearch
-
-"Compile and Run
-=======
-set splitright 
->>>>>>> d218391586fa122303c949d7514baa52ad678369
 set autowrite
 
 " Mappings
