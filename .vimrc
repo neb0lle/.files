@@ -7,11 +7,11 @@ call plug#begin('~/.vim/plugged')
 	" Auto pairs for '(' '[' '{'
 	Plug 'jiangmiao/auto-pairs'
 	" Rich Presence
-	" Plug 'vimsence/vimsence'
+	Plug 'vimsence/vimsence'
 	" AirLine 
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
-    source $HOME/.vim/themes/airline.vim
+	source $HOME/.vim/themes/airline.vim
 	" CSS color
 	Plug 'ap/vim-css-color'
 	" Surround
@@ -25,11 +25,16 @@ call plug#begin('~/.vim/plugged')
 	" source $HOME/.vim/plug-config/coc.vim
 	" fzf
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    call plug#end()
+call plug#end()
 
-:map<C-n>    :NERDTree<CR>
+" Change cursor shape in different modes
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
+" General Settings
 syntax on
-set clipboard=unnamedplus
+set clipboard=unnamed
 set number relativenumber
 set tabstop=4
 set shiftwidth=4
@@ -39,9 +44,10 @@ set background=dark
 set ignorecase
 set smartcase
 set splitbelow
-set splitright
-
-"Compile and Run
+set splitright 
 set autowrite
+
+" Mappings
+:map<C-n>    :NERDTree<CR>
 autocmd filetype cpp nnoremap <buffer> <C-c> :!g++ -std=c++17 -Wshadow -Wall -o %:t:r % -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && ./%:t:r<CR>
 autocmd filetype python nnoremap <buffer> <C-c> :!python3 %<CR>
