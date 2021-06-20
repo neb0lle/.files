@@ -34,6 +34,8 @@ let &t_EI = "\<Esc>[2 q"
 
 " General Settings
 syntax on
+filetype plugin on
+set nocompatible
 set clipboard=unnamed
 set number relativenumber
 set tabstop=4
