@@ -50,7 +50,7 @@ set noswapfile
 set splitbelow
 set splitright
 set incsearch
-set autowrite
+set autowrote
 
 " Mappings
 :map<C-n>    :NERDTree<CR>
