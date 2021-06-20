@@ -4,7 +4,7 @@
 
 # rofi command. Make sure to have "$@" as last argument
 _rofi () {
-    rofi -theme '~/.config/rofi/themes/sed.rasi' -i -no-auto-select "$@"
+    rofi -theme '~/.config/rofi/themes/sed.rasi' -i -no-auto-select -display-pass "$@"
 }
 
 # default command to generate passwords

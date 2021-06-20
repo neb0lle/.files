@@ -54,14 +54,17 @@
     XF86AudioStop
 
 # ROFI
-"rofi -theme '~/.config/rofi/themes/sed.rasi' -combi-modi window,drun -show combi -modi combi -window-format {t} -show-icons -display-combi 'RUN:'"
+"rofi -theme '~/.config/rofi/themes/sed.rasi' -combi-modi window,drun -show combi -modi combi -window-format {t} -show-icons -display-combi 'run:'"
     Mod4+space
 """rofi -theme '~/.config/rofi/themes/sed.rasi' -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'"""
     Mod4+c
-"""rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi/themes/sed.rasi -calc-command 'echo -n "{result}" | xclip -selection clipboard'"""
+"""rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi/themes/sed.rasi -calc-command 'echo -n "{result}" | xclip -selection clipboard' -display-calc 'calculator:'"""
     Mod4+equal
 "rofi-pass"
     Mod4+p
+"rofi -show window -theme '~/.config/rofi/themes/sed.rasi' -window-format '{t:+20}' -kb-accept-entry '!Alt-Tab' -kb-row-down Alt-Tab -display-window 'cycle:'"
+    Alt+Tab
+
 # Application Bindings
 "kitty"
     Mod4+Return

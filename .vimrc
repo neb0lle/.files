@@ -31,15 +31,18 @@ call plug#begin('~/.vim/plugged')
 syntax on
 set clipboard=unnamedplus
 set number relativenumber
-set tabstop=4
+set tabstop=4 softtabstop=4
 set shiftwidth=4
+set smartindent
 set expandtab
 set cmdheight=1
 set background=dark
 set ignorecase
 set smartcase
+set noswapfile
 set splitbelow
 set splitright
+set incsearch
 
 "Compile and Run
 set autowrite
