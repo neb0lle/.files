@@ -25,8 +25,11 @@ call plug#begin('~/.vim/plugged')
 	" source $HOME/.vim/plug-config/coc.vim
 	" fzf
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-call plug#end()
+    " Theme
+    Plug 'gosukiwi/vim-atom-dark'
+    call plug#end()
 
+" colorscheme atom-dark
 " Change cursor shape in different modes
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
@@ -36,14 +39,10 @@ let &t_EI = "\<Esc>[2 q"
 syntax on
 filetype plugin on
 set nocompatible
-set clipboard=unnamedplus
+" set termguicolors
 set number relativenumber
-set tabstop=4 softtabstop=4
-set shiftwidth=4
 set smartindent
 set expandtab
-set cmdheight=1
-set background=dark
 set ignorecase
 set smartcase
 set noswapfile
@@ -51,6 +50,11 @@ set splitbelow
 set splitright
 set incsearch
 set autowrite
+set shiftwidth=4
+set cmdheight=1
+set background=dark
+set clipboard=unnamedplus
+set tabstop=4 softtabstop=4
 
 " Mappings
 :map<C-n>    :NERDTree<CR>

@@ -201,8 +201,8 @@ layout_theme = {
         }
 layouts = [
     layout.Bsp(**layout_theme,fair=False,name=''),
-    layout.Stack(num_stacks=1,margin=4,border_width=0,name=''),
-    layout.Stack(num_stacks=2,**layout_theme,name='洛'),
+    layout.Stack(num_stacks=1,margin=4,border_width=0,name='洛'),
+    layout.Stack(num_stacks=2,**layout_theme,name=''),
    # layout.Max(**layout_theme),
    # layout.RatioTile(),
    # layout.Zoomy(),
