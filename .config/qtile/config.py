@@ -167,10 +167,10 @@ colors = [["#000000","#000000"], # BLACK
           ["#01fdb0","#01fdb0"], # MINT
           ["#131519","#131519"], # DARK GREY
           ["#46474f","#46474f"], # LIGHT GREY
-          ["#ffff44","#ffff44"], # YELLOW
+          ["#ffff55","#ffff55"], # YELLOW
           ["#ff4444","#ff4444"], # SALMON
-          ["#00a2ff","#00a2ff"], # BLUE
-          ["#ff54c4","#ff54c4"]] # MAGENTA
+          ["#2392fb","#2392fb"], # BLUE
+          ["#ff5cc6","#ff5cc6"]] # MAGENTA
 
 def init_group_names():
     return [("I",{'layout':'bsp'}),
@@ -281,13 +281,6 @@ screens = [
                     foreground=colors[3],
                     linewidth=1,
                     ),
-                # widget.CurrentLayoutIcon(
-                #        custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
-                #        foreground = colors[0],
-                #        background = colors[3],
-                #        padding = 3,
-                #        scale = 0.6
-                #        ),
                  widget.TextBox(
                        text = '|',
                        background = colors[3],
