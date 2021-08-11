@@ -1,10 +1,15 @@
 # SED zsh config
 
+# tmux
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux -u new-session
+fi
+
 # Enable colors and change prompt:
 autoload -U colors && colors
 PS1="%F{yellow}%n%f%F{magenta}@%f%F{blue}%m%f %~ %F{green}❯%f "
 
-# History stuff:
+# History:
 HISTSIZE=5000
 SAVEHIST=5000
 HISTFILE=~/.cache/zsh/history
@@ -86,28 +91,36 @@ run_ranger () {
     zle reset-prompt
 }
 zle -N run_ranger
-bindkey '^b' run_ranger
+bindkey '^f' run_ranger
 
 # EXPORTS
 export LANG=en_US.UTF-8
+# export TERM='screen-256color'
+export TERM='xterm-kitty'
 export EDITOR='vim'
 export VISUAL='vim'
 export BROWSER='brave'
 export TRUEBROWSER='brave'
-export READER='evince'
-export MANPAGER='/bin/zsh -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
 
 # aliases
-alias ls='ls --color=auto'
+alias ls='ls -G --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias py='python3'
+alias cf='fortune | cowsay'
+alias reddit='rtv'
 alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
 
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag --hidden -f -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --info=inline'
+
 # Startup
-colorscript random
 eval "$(starship init zsh)"
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+# source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
