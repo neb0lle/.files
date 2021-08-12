@@ -111,6 +111,7 @@ alias py='python3'
 alias cf='fortune | cowsay'
 alias reddit='rtv'
 alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
+alias mute='dunstctl set-paused toggle'
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

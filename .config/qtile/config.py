@@ -241,11 +241,11 @@ screens = [
                     urgent_text=colors[5],
                     urgent_border=colors[3],
                     ),
-                widget.Sep(
-                    background=colors[3],
-                    foreground=colors[3],
-                    linewidth=15,
-                ),
+                # widget.Sep(
+                #     background=colors[3],
+                #     foreground=colors[3],
+                #     linewidth=1,
+                # ),
                 widget.WindowName(
                     padding = 24,
                     background=colors[3],
