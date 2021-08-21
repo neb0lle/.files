@@ -241,15 +241,14 @@ screens = [
                     urgent_text=colors[5],
                     urgent_border=colors[3],
                     ),
-                # widget.Sep(
-                #     background=colors[3],
-                #     foreground=colors[3],
-                #     linewidth=1,
-                # ),
                 widget.WindowName(
-                    padding = 24,
+                    padding = 10,
                     background=colors[3],
                     ),
+                widget.Notify(
+                    background=colors[3],
+                    foreground=colors[1],
+                ),
                 widget.Sep(
                     background=colors[3],
                     foreground=colors[3],
@@ -401,7 +400,19 @@ floating_layout = layout.Floating(
     **layout_theme,
     float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
-    *layout.Floating.default_float_rules,
+    Match(wm_type='utility'),
+    Match(wm_type='notification'),
+    Match(wm_type='toolbar'),
+    Match(wm_type='splash'),
+    Match(wm_type='dialog'),
+    Match(wm_class='file_progress'),
+    Match(wm_class='confirm'),
+    Match(wm_class='dialog'),
+    Match(wm_class='download'),
+    Match(wm_class='error'),
+    Match(wm_class='notification'),
+    Match(wm_class='splash'),
+    Match(wm_class='toolbar'),
     Match(wm_class='confirmreset'),  # gitk
     Match(wm_class='makebranch'),  # gitk
     Match(wm_class='maketag'),  # gitk
@@ -409,6 +420,7 @@ floating_layout = layout.Floating(
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
     Match(title='Qalculate'),
+    Match(func=lambda c: c.has_fixed_size()),
 ])
 
 # Configuration Variables

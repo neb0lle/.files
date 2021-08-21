@@ -90,5 +90,5 @@ let mapleader=' '
 :map<C-n>    :NERDTree<CR>
 nnoremap <C-p> :Files<Cr>
 nmap <F2> <Plug>(coc-rename)
-autocmd filetype cpp nnoremap <buffer> <C-c> :!g++ -std=c++14 -Wshadow -Wall -o %:t:r % -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -target x86_64-apple-darwin20.3.0 && ./%:t:r<CR>
+autocmd filetype cpp nnoremap <buffer> <C-c> :!g++ -std=c++14 -Wshadow -Wall -o %:t:r % -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && ./%:t:r<CR>
 autocmd filetype python nnoremap <buffer> <C-c> :!python3 %<CR>

@@ -16,7 +16,6 @@
 #    "command to start"
 #       associated key
 #
-#
 # A list of keys is in /usr/include/X11/keysym.h and in
 # /usr/include/X11/keysymdef.h
 # The XK_ is not needed.
@@ -62,8 +61,8 @@
     Mod4+equal
 "rofi-pass"
     Mod4+p
-"rofi -show window -theme '~/.config/rofi/themes/sed.rasi' -window-format '{t:+20}' -kb-accept-entry '!Alt-Tab' -kb-row-down Alt-Tab -display-window 'cycle:'"
-    Alt+Tab
+# """rofi -show window -sort -theme "~/.config/rofi/themes/sed.rasi" -window-format "{t:10}" -kb-accept-entry "!Alt-Tab" -kb-row-down Alt-Tab -display-window "cycle:""""
+#     Alt+Tab
 
 # Application Bindings
 "kitty"
