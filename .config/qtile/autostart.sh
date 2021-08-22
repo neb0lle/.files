@@ -9,4 +9,4 @@ xbindkeys &
 flameshot &
 noisetorch -i &
 setxkbmap -option caps:swapescape &
-alttab -font "xft:JetBrainsMono Nerd Font-11" -fg "#ffffff" -bg "#000000" -frame "#ffffff" -t 100x100 -d 1 &
+sleep 5 && alttab -font "xft:JetBrainsMono Nerd Font-11" -fg "#ffffff" -bg "#000000" -frame "#ffffff" -t 100x100 -d 1 &

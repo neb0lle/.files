@@ -19,7 +19,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'chrisbra/Colorizer'
     Plug 'mhinz/vim-startify'
 	" CoC
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " VimWiki
     Plug 'vimwiki/vimwiki'
     " fzf

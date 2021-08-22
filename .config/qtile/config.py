@@ -245,10 +245,6 @@ screens = [
                     padding = 10,
                     background=colors[3],
                     ),
-                widget.Notify(
-                    background=colors[3],
-                    foreground=colors[1],
-                ),
                 widget.Sep(
                     background=colors[3],
                     foreground=colors[3],
