@@ -43,13 +43,13 @@
    XF86AudioMute
 
 # PlayerCTL
-"playerctl -p spotify,ALL next"
+"playerctl --all-players next"
     XF86AudioNext
-"playerctl -p spotify,ALL previous"
+"playerctl --all-players previous"
     XF86AudioPrev
-"playerctl -p spotify,ALL play-pause"
+"playerctl --all-players play-pause"
     XF86AudioPlay
-"playerctl -p spotify,ALL stop"
+"playerctl --all-players stop"
     XF86AudioStop
 
 # ROFI
