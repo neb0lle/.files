@@ -109,7 +109,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias py='python3'
 alias cf='fortune | cowsay'
-alias reddit='rtv'
+alias reddit='ttrv'
 alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
 alias mute='dunstctl set-paused toggle'
 

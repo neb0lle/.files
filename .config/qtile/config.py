@@ -223,6 +223,15 @@ screens = [
                     foreground=colors[3],
                     linewidth=4,
                 ),
+                # widget.Mpris2(
+                #     name='spotify',
+                #     objname="org.mpris.MediaPlayer2.spotify",
+                #     display_metadata=['xesam:title'],
+                #     stop_pause_text='',
+                #     background=colors[3],
+                #     foreground=colors[1],
+                #     scroll_chars=None,
+                # ),
                 widget.GroupBox(
                     font = "Nimbus Sans, Bold",
                     padding=4,
