@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 	" Syntax
 	Plug 'sheerun/vim-polyglot'
 	Plug 'jiangmiao/auto-pairs'
