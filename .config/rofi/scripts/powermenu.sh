@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-rofi_command="rofi -theme-str 'entry {width: 5%;}' -theme ~/.config/rofi/themes/sed.rasi"
+rofi_command="rofi -theme ~/.config/rofi/themes/sed.rasi"
 
 uptime=$(uptime -p | sed -e 's/up //g')
 

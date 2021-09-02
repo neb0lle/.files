@@ -53,6 +53,8 @@
     XF86AudioStop
 
 # ROFI
+"/home/neville/.config/rofi/scripts/powermenu.sh"
+    Mod4+Escape
 "rofi -theme '~/.config/rofi/themes/sed.rasi' -combi-modi window,drun -show combi -modi combi -window-format {t} -show-icons -display-combi 'run:'"
     Mod4+space
 """rofi -theme '~/.config/rofi/themes/sed.rasi' -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'"""
