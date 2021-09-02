@@ -37,7 +37,7 @@ entry {
     text-color: #ffffff; 
     padding: 6px 0px;
     expand: false;
-    width: 10em;
+    width: 10%;
 }
 element {
     padding: 6px 8px;
