@@ -11,7 +11,7 @@
     selected-normal-background: #131519;
     selected-normal-foreground: #ffffff;
 }
-#window {
+window {
     anchor: north;
     location: north;
     width: 1908px;
@@ -19,33 +19,37 @@
     y-offset: 6px;
     children: [ horibox ];
 }
-#horibox {
+horibox {
     orientation: horizontal;
     children: [ prompt, entry, listview ];
 }
-#prompt {
+prompt {
     padding:          @prompt-padding;
     background-color: @prompt-background;
     text-color:       @prompt-foreground;
     font:             @prompt-font;
 }
-#listview {
+listview {
     layout: horizontal;
     lines: 100;
 }
-#entry {
+entry {
     text-color: #ffffff; 
     padding: 6px 0px;
     expand: false;
     width: 10em;
 }
-#element {
+element {
     padding: 6px 8px;
 }
-#element selected {
+element selected {
     background-color: @selected-normal-background;
     text-color:       @selected-normal-foreground;
 }
-#element-icon{
+element-icon{
     size:2.3ch;
+}
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
 }
