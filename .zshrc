@@ -103,6 +103,7 @@ export BROWSER='brave'
 export TRUEBROWSER='brave'
 
 # aliases
+alias vim='nvim'
 alias ls='ls -G --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
