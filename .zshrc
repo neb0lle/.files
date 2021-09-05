@@ -113,6 +113,7 @@ alias cf='cowsay "sed"'
 alias reddit='ttrv'
 alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
 alias mute='dunstctl set-paused toggle'
+alias shrinkpdf='~/.scripts/shrinkpdf.sh'
 
 # fzf
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
