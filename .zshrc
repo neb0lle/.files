@@ -93,6 +93,10 @@ run_ranger () {
 zle -N run_ranger
 bindkey '^f' run_ranger
 
+# Resizing issue fix
+unset LINES
+unset COLUMNS
+
 # EXPORTS
 export LANG=en_US.UTF-8
 # export TERM='screen-256color'
