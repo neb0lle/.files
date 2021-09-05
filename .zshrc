@@ -97,8 +97,8 @@ bindkey '^f' run_ranger
 export LANG=en_US.UTF-8
 # export TERM='screen-256color'
 export TERM='xterm-kitty'
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 export BROWSER='brave'
 export TRUEBROWSER='brave'
 
