@@ -87,6 +87,7 @@ let g:vimwiki_list = [{'path': '~/.wiki/',
 
 " Mappings
 let mapleader=' '
+nnoremap \ :noh<return>
 :map<C-n>    :NERDTree<CR>
 nnoremap <C-p> :Files<Cr>
 nmap <F2> <Plug>(coc-rename)
