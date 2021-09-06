@@ -14,7 +14,7 @@
 window {
     anchor: north;
     location: north;
-    width: 1908px;
+    width: 99%;
     height: 30px;
     y-offset: 6px;
     children: [ horibox ];
