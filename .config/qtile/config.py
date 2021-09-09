@@ -444,4 +444,4 @@ focus_on_window_activation = "focus"
 def autostart():
     home = os.path.expanduser('~')
     subprocess.call([home+'/.config/qtile/autostart.sh'])
-wmname = "Qtile"
+wmname = "LG3D"
