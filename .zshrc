@@ -2,7 +2,7 @@
 
 # tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux -u new-session
+	exec tmux -u new-session
 fi
 
 # Enable colors and change prompt:
@@ -12,7 +12,7 @@ PS1="%F{yellow}%n%f%F{magenta}@%f%F{blue}%m%f %~ %F{green}❯%f "
 # History:
 HISTSIZE=5000
 SAVEHIST=5000
-HISTFILE=~/.cache/zsh/history
+HISTFILE=~/.zsh_history
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -103,21 +103,26 @@ export LANG=en_US.UTF-8
 export TERM='xterm-kitty'
 export EDITOR='nvim'
 export VISUAL='nvim'
+export MANPAGER="nvim -c 'set ft=man' -"
 export BROWSER='brave'
 export TRUEBROWSER='brave'
 
+# PATH
+# export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
+# export PATH="/opt/homebrew/opt/util-linux/sbin:$PATH"
+path+=("/Users/neville/.scripts")
+export PATH
+
 # aliases
 alias vim='nvim'
-alias ls='ls -G --color=auto'
+alias ls='ls -Gh --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias py='python3'
 alias cf='cowsay "sed"'
-alias reddit='ttrv'
-alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
 alias mute='dunstctl set-paused toggle'
-alias shrinkpdf='~/.scripts/shrinkpdf.sh'
+alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
 
 # fzf
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
