@@ -128,7 +128,7 @@ alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/nevil
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-export FZF_DEFAULT_COMMAND='rg --hidden --ignore-file ~/.gitignore -l ""'
+export FZF_DEFAULT_COMMAND='ag --hidden -p .gitignore -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --info=inline'
 
