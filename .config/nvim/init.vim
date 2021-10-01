@@ -22,6 +22,9 @@ call plug#begin()
 " FZF:
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 	Plug 'junegunn/fzf.vim'
+" Misc:
+	Plug 'christoomey/vim-tmux-navigator'
+	Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
 " General Settings:
@@ -105,14 +108,11 @@ let g:fzf_colors =
 " Mappings:
 let mapleader=' '
 nnoremap Y y$
+nnoremap J mzJ`z
 nmap <leader>gs :G<CR>
 nmap <F2> <Plug>(coc-rename)
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 " Quick Run:
-autocmd filetype cpp nnoremap <buffer> <C-c> :!/opt/homebrew/Cellar/gcc/11.2.0/bin/aarch64-apple-darwin20-g++-11 -std=c++14 -Wshadow -Wall -o %:t:r % && ./%:t:r && echo '' && less ./o.txt<CR>
-" autocmd filetype cpp nnoremap <buffer> <C-c> :!g++ -std=c++14 -Wshadow -Wall -o %:t:r % -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && ./%:t:r && echo '' && less ./o.txt<CR>
+" autocmd filetype cpp nnoremap <buffer> <C-c> :!/opt/homebrew/Cellar/gcc/11.2.0/bin/aarch64-apple-darwin20-g++-11 -std=c++14 -Wshadow -Wall -o %:t:r % && ./%:t:r && echo '' && less ./o.txt<CR>
+autocmd filetype cpp nnoremap <buffer> <C-c> :!g++ -std=c++14 -Wshadow -Wall -o %:t:r % -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && ./%:t:r && echo '' && less ./o.txt<CR>
 autocmd filetype python nnoremap <buffer> <C-c> :!python3 %<CR>
