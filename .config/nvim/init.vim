@@ -87,6 +87,7 @@ EOF
 
 "	Dashboard:
 highlight dashboardHeader ctermfg=8
+highlight dashboardCenter ctermfg=12
 let g:dashboard_default_executive ='fzf'
 let g:indentLine_fileTypeExclude = ['dashboard']
 let g:dashboard_custom_header = [
@@ -101,7 +102,16 @@ let g:dashboard_custom_header = [
     \' ⣠⣿⠿⠛⠄⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ',
     \' ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇⠄⠛⠻⢷⣄ ',
     \'      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ',
-    \'       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ',]
+    \'       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ',
+    \'']
+lua <<EOF
+vim.g.dashboard_custom_section = {
+    a = {description = {' New file'}, command = 'DashboardNewFile'},
+    b = {description = {' Browse files'}, command = 'Files'},
+    c = {description = {' Settings'}, command = 'edit $HOME/.config/nvim/init.vim'},
+    d = {description = {' Exit'}, command = 'exit'},
+}
+EOF
 
 "	VimWiki:
 let g:vimwiki_list = [
