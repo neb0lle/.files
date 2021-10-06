@@ -106,6 +106,7 @@ export VISUAL='nvim'
 export MANPAGER="nvim -c 'set ft=man' -"
 export BROWSER='brave'
 export TRUEBROWSER='brave'
+export BAT_THEME='base16-256'
 
 # PATH
 # export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
@@ -131,7 +132,7 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden -p .gitignore -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --info=inline'
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --info=inline --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 
 # Startup
 eval "$(starship init zsh)"

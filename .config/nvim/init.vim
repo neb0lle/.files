@@ -68,7 +68,7 @@ set cmdheight=1
 set showtabline=2
 set laststatus=2
 set noshowmode
-" set termguicolors
+set termguicolors
 " set colorcolumn=80
 
 let g:airline_theme='behelit'
