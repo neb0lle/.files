@@ -99,7 +99,7 @@ unset COLUMNS
 
 # EXPORTS
 export LANG=en_US.UTF-8
-# export TERM='screen-256color'
+# export TERM='xterm-256color'
 export TERM='xterm-kitty'
 export EDITOR='nvim'
 export VISUAL='nvim'
