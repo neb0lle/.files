@@ -3,18 +3,17 @@ call plug#begin()
 	Plug 'sheerun/vim-polyglot'
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'tpope/vim-surround'
-	Plug 'tomtom/tcomment_vim'
-" Rich Presence:
-	" Plug 'vimsence/vimsence'
+	Plug 'tpope/vim-commentary'
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Version Control:
-	Plug 'mbbill/undotree'
 	Plug 'tpope/vim-fugitive'
 " Theme:
+	Plug 'lukas-reineke/indent-blankline.nvim'
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'chrisbra/Colorizer'
-    Plug 'mhinz/vim-startify'
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'norcalli/nvim-colorizer.lua'
+	Plug 'glepnir/dashboard-nvim'
 " CoC:
 	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " VimWiki:
@@ -27,7 +26,7 @@ call plug#begin()
 	Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
-" General Settings:
+"	General Settings:
 syntax on
 filetype plugin indent on
 set nocompatible
@@ -43,7 +42,6 @@ set incsearch
 set noswapfile
 set nobackup
 set undofile
-" set undodir=~/.vim/undodir
 set clipboard=unnamedplus
 
 set splitbelow
@@ -62,22 +60,50 @@ set shiftwidth=4
 set softtabstop=4
 set scrolloff=8
 
-" Theme:
+"	Theme:
 colorscheme ThemerVim
 set background=dark
 highlight Normal guibg=None
-	" set termguicolors
 set cmdheight=1
 set showtabline=2
 set laststatus=2
 set noshowmode
+" set termguicolors
 " set colorcolumn=80
 
 let g:airline_theme='behelit'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
-" VimWiki:
+"	Treesetter:
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
+"	Dashboard:
+highlight dashboardHeader ctermfg=8
+let g:dashboard_default_executive ='fzf'
+let g:indentLine_fileTypeExclude = ['dashboard']
+let g:dashboard_custom_header = [
+    \'',
+    \'   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣭⣿⣶⣿⣦⣼⣆         ',
+    \'    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ',
+    \'          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷⠄⠄⠄⠄⠻⠿⢿⣿⣧⣄     ',
+    \'           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ',
+    \'          ⢠⣿⣿⣿⠈  ⠡⠌⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ',
+    \'   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘⠄ ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ',
+    \'  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ',
+    \' ⣠⣿⠿⠛⠄⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ',
+    \' ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇⠄⠛⠻⢷⣄ ',
+    \'      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ',
+    \'       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ',]
+
+"	VimWiki:
 let g:vimwiki_list = [
 	\{'path': '~/.wiki/',
 	\'syntax': 'markdown',
@@ -86,7 +112,7 @@ let g:vimwiki_list = [
 	\},]
 let g:vimwiki_markdown_link_ext = 1
 
-" FZF:
+"	FZF:
 map <C-p> :Files<CR>
 map <C-n> :Buffers<CR>
 let g:fzf_buffers_jump = 1
@@ -105,14 +131,14 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
-" Mappings:
+"	Mappings:
 let mapleader=' '
 nnoremap Y y$
 nnoremap J mzJ`z
 nmap <leader>gs :G<CR>
 nmap <F2> <Plug>(coc-rename)
 
-" Quick Run:
+"	Quick Run:
 " autocmd filetype cpp nnoremap <buffer> <C-c> :!/opt/homebrew/Cellar/gcc/11.2.0/bin/aarch64-apple-darwin20-g++-11 -std=c++14 -Wshadow -Wall -o %:t:r % && ./%:t:r && echo '' && less ./o.txt<CR>
 autocmd filetype cpp nnoremap <buffer> <C-c> :!g++ -std=c++14 -Wshadow -Wall -o %:t:r % -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && ./%:t:r && echo '' && less ./o.txt<CR>
 autocmd filetype python nnoremap <buffer> <C-c> :!python3 %<CR>
