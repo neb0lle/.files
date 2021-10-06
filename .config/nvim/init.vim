@@ -103,9 +103,7 @@ let g:dashboard_custom_header = [
     \' ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇⠄⠛⠻⢷⣄ ',
     \'      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ',
     \'       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ',
-    \'',
-    \'',
-    \'                sed                ']
+    \'',]
 lua <<EOF
 vim.g.dashboard_custom_section = {
     a = {description = {' New file'}, command = 'DashboardNewFile'},
