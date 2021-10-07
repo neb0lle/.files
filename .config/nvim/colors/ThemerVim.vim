@@ -1,7 +1,7 @@
 
 
   
-  " if &background == 'dark'
+  if &background == 'dark'
     
   let s:guishade0 = "#000000"
   let s:guishade1 = "#242424"
@@ -11,14 +11,14 @@
   let s:guishade5 = "#b6b6b6"
   let s:guishade6 = "#dbdbdb"
   let s:guishade7 = "#ffffff"
-  let s:guiaccent0 = "#ff4444"
+  let s:guiaccent0 = "#ff5555"
   let s:guiaccent1 = "#01fdb0"
-  let s:guiaccent2 = "#fefe95"
-  let s:guiaccent3 = "#77dd77"
-  let s:guiaccent4 = "#7eedf1"
+  let s:guiaccent2 = "#ffff66"
+  let s:guiaccent3 = "#50fa7b"
+  let s:guiaccent4 = "#00ffff"
   let s:guiaccent5 = "#2392fb"
   let s:guiaccent6 = "#9966ff"
-  let s:guiaccent7 = "#ff5cc6"
+  let s:guiaccent7 = "#ff77cc"
   let s:ctermshade0 = 16
   let s:ctermshade1 = 235
   let s:ctermshade2 = 238
@@ -27,16 +27,16 @@
   let s:ctermshade5 = 249
   let s:ctermshade6 = 253
   let s:ctermshade7 = 231
-  let s:ctermaccent0 = 203
+  let s:ctermaccent0 = 210
   let s:ctermaccent1 = 49
-  let s:ctermaccent2 = 229
-  let s:ctermaccent3 = 114
-  let s:ctermaccent4 = 123
+  let s:ctermaccent2 = 228
+  let s:ctermaccent3 = 120
+  let s:ctermaccent4 = 51
   let s:ctermaccent5 = 75
   let s:ctermaccent6 = 141
   let s:ctermaccent7 = 212
   
-  " endif
+  endif
   
 
   

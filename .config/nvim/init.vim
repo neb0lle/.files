@@ -86,8 +86,8 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 "	Dashboard:
-highlight dashboardHeader ctermfg=8 cterm=bold
-highlight dashboardCenter ctermfg=12
+highlight dashboardHeader ctermfg=8 guifg=grey
+highlight dashboardCenter ctermfg=12 guifg=#2392FB
 let g:dashboard_default_executive ='fzf'
 let g:indentLine_fileTypeExclude = ['dashboard']
 let g:dashboard_custom_header = [
@@ -105,6 +105,7 @@ let g:dashboard_custom_header = [
     \'       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ',
     \'',]
 lua <<EOF
+vim.g.dashboard_footer_icon = ' '
 vim.g.dashboard_custom_section = {
     a = {description = {' New file'}, command = 'DashboardNewFile'},
     b = {description = {' Browse files'}, command = 'Files'},
