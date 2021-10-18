@@ -2,7 +2,7 @@
 
 # tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux -u new-session
+	exec tmux -u new-session
 fi
 
 # Enable colors and change prompt:
@@ -12,7 +12,7 @@ PS1="%F{yellow}%n%f%F{magenta}@%f%F{blue}%m%f %~ %F{green}❯%f "
 # History:
 HISTSIZE=5000
 SAVEHIST=5000
-HISTFILE=~/.cache/zsh/history
+HISTFILE=~/.zsh_history
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -99,33 +99,40 @@ unset COLUMNS
 
 # EXPORTS
 export LANG=en_US.UTF-8
-# export TERM='screen-256color'
+# export TERM='xterm-256color'
 export TERM='xterm-kitty'
 export EDITOR='nvim'
 export VISUAL='nvim'
+export MANPAGER="nvim -c 'set ft=man' -"
 export BROWSER='brave'
 export TRUEBROWSER='brave'
+export BAT_THEME='base16-256'
+
+# PATH
+# export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
+# export PATH="/opt/homebrew/opt/util-linux/sbin:$PATH"
+path+=("/Users/neville/.scripts")
+export PATH
 
 # aliases
 alias vim='nvim'
-alias ls='ls -G --color=auto'
+alias ls='ls -Gh --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias wiki='vim -c ":VimwikiIndex"'
 alias py='python3'
 alias cf='cowsay "sed"'
-alias reddit='ttrv'
-alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
 alias mute='dunstctl set-paused toggle'
-alias shrinkpdf='~/.scripts/shrinkpdf.sh'
+alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
 
 # fzf
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-export FZF_DEFAULT_COMMAND='ag --hidden -p ~/.gitignore -g ""'
+export FZF_DEFAULT_COMMAND='ag --hidden -p .gitignore -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --info=inline'
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border --info=inline --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 
 # Startup
 eval "$(starship init zsh)"
