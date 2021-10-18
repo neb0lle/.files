@@ -176,6 +176,7 @@ groups = [
         Group("VI",{'layout':'bsp'}),
         Group("VII",{'layout':'bsp'}),
         Group("VIII",{'layout':'bsp'}),
+        Group("IX",{'layout':'bsp'}),
         ]
 
 layout_theme = {
