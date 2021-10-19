@@ -67,7 +67,7 @@ check_smaller ()
 
 usage ()
 {
-	echo "  Usage: $1 [infile] [outfile] [resolution_in_dpi]"
+	echo "  Usage: shrinkpdf [infile] [outfile] [resolution_in_dpi]"
 }
 
 IFILE="$1"
