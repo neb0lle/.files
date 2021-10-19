@@ -67,9 +67,7 @@ check_smaller ()
 
 usage ()
 {
-	echo "Reduces PDF filesize by lossy recompressing with Ghostscript."
-	echo "Not guaranteed to succeed, but usually works."
-	echo "  Usage: $1 infile [outfile] [resolution_in_dpi]"
+	echo "  Usage: $1 [infile] [outfile] [resolution_in_dpi]"
 }
 
 IFILE="$1"

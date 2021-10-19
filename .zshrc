@@ -111,7 +111,7 @@ export BAT_THEME='base16-256'
 # PATH
 # export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
 # export PATH="/opt/homebrew/opt/util-linux/sbin:$PATH"
-path+=("/Users/neville/.scripts")
+path+=("$HOME/.scripts")
 export PATH
 
 # aliases
