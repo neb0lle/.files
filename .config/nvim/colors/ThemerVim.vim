@@ -1,6 +1,3 @@
-
-
-  
   if &background == 'dark'
     
   let s:guishade0 = "#000000"
@@ -43,7 +40,7 @@
 
   highlight clear
   syntax reset
-  let g:colors_name = "ThemerVim"
+  let g:colors_name = "sed"
 
   """"""""""
   " Normal "
@@ -219,4 +216,3 @@
 
   unlet s:guishade0 s:guishade1 s:guishade2 s:guishade3 s:guishade4 s:guishade5 s:guishade6 s:guishade7 s:guiaccent0 s:guiaccent1 s:guiaccent2 s:guiaccent3 s:guiaccent4 s:guiaccent5 s:guiaccent6 s:guiaccent7
   unlet s:ctermshade0 s:ctermshade1 s:ctermshade2 s:ctermshade3 s:ctermshade4 s:ctermshade5 s:ctermshade6 s:ctermshade7 s:ctermaccent0 s:ctermaccent1 s:ctermaccent2 s:ctermaccent3 s:ctermaccent4 s:ctermaccent5 s:ctermaccent6 s:ctermaccent7
-  
