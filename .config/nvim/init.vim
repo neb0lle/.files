@@ -1,21 +1,21 @@
 call plug#begin()
 " Syntax:
-	Plug 'sheerun/vim-polyglot'
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-commentary'
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Formatting:
+	" Plug 'sbdchd/neoformat'
+" Completion:
+	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Version Control:
 	Plug 'tpope/vim-fugitive'
 " Theme:
 	Plug 'lukas-reineke/indent-blankline.nvim'
-	Plug 'ryanoasis/vim-devicons'
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
+	Plug 'kyazdani42/nvim-web-devicons'
+	Plug 'famiu/feline.nvim'
 	Plug 'norcalli/nvim-colorizer.lua'
 	Plug 'glepnir/dashboard-nvim'
-" CoC:
-	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " VimWiki:
     Plug 'vimwiki/vimwiki'
 " FZF:
@@ -61,19 +61,21 @@ set softtabstop=4
 set scrolloff=8
 
 "	Theme:
-colorscheme ThemerVim
+colorscheme sed
 set background=dark
 highlight Normal guibg=None
 set cmdheight=1
-set showtabline=2
+set showtabline=0
 set laststatus=2
 set noshowmode
 set termguicolors
 " set colorcolumn=80
 
-let g:airline_theme='behelit'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+lua <<EOF
+require('feline').setup{
+}
+EOF
+
 
 "	Treesetter:
 lua <<EOF
@@ -89,7 +91,7 @@ EOF
 highlight dashboardHeader ctermfg=8 guifg=grey
 highlight dashboardCenter ctermfg=12 guifg=#2392FB
 let g:dashboard_default_executive ='fzf'
-let g:indentLine_fileTypeExclude = ['dashboard']
+let g:indentLine_fileTypeExclude = ['dashboard','txt']
 let g:dashboard_custom_header = [
     \'',
     \'   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣭⣿⣶⣿⣦⣼⣆         ',
@@ -146,10 +148,11 @@ let g:fzf_colors =
 let mapleader=' '
 nnoremap Y y$
 nnoremap J mzJ`z
+nnoremap <leader><leader> <c-^>
 nmap <leader>gs :G<CR>
 nmap <F2> <Plug>(coc-rename)
 
 "	Quick Run:
-" autocmd filetype cpp nnoremap <buffer> <C-c> :!/opt/homebrew/Cellar/gcc/11.2.0/bin/aarch64-apple-darwin20-g++-11 -std=c++14 -Wshadow -Wall -o %:t:r % && ./%:t:r && echo '' && less ./o.txt<CR>
-autocmd filetype cpp nnoremap <buffer> <C-c> :!g++ -std=c++14 -Wshadow -Wall -o %:t:r % -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && ./%:t:r && echo '' && less ./o.txt<CR>
-autocmd filetype python nnoremap <buffer> <C-c> :!python3 %<CR>
+autocmd filetype cpp nnoremap <buffer> <C-c> :!/opt/homebrew/Cellar/gcc/11.2.0/bin/aarch64-apple-darwin20-g++-11 -std=c++14 -Wshadow -Wall -o %:t:r % && ./%:t:r && echo '' && less ./o.txt<CR>
+" autocmd filetype cpp nnoremap <buffer> <C-c> :!g++ -std=c++14 -Wshadow -Wall -o %:t:r % -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG && ./%:t:r && echo '' && less ./o.txt<CR>
+autocmd filetype python nnoremap <buffer> <C-c> :!python3 "%"<CR>
