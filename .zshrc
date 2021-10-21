@@ -103,7 +103,7 @@ export LANG=en_US.UTF-8
 export TERM='xterm-kitty'
 export EDITOR='nvim'
 export VISUAL='nvim'
-export MANPAGER="nvim -c 'set ft=man' -"
+export MANPAGER='nvim +Man!'
 export BROWSER='brave'
 export TRUEBROWSER='brave'
 export BAT_THEME='base16-256'
