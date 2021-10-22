@@ -161,10 +161,10 @@ colors = [
         ["#01fdb0","#01fdb0"], # MINT
         ["#131519","#131519"], # DARK GREY
         ["#46474f","#46474f"], # LIGHT GREY
-        ["#ffff55","#ffff55"], # YELLOW
-        ["#ff4444","#ff4444"], # SALMON
+        ["#ffff66","#ffff66"], # YELLOW
+        ["#ff5555","#ff5555"], # SALMON
         ["#2392fb","#2392fb"], # BLUE
-        ["#ff5cc6","#ff5cc6"], # MAGENTA
+        ["#ff77cc","#ff77cc"], # MAGENTA
         ]
 
 groups = [
