@@ -34,8 +34,11 @@ case $chosen in
         ;;
     'FFC-on')
         nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+		killall picom
+		picom --experimental-backends &
         ;;
     'FFC-off')
         nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = Off }"
+		killall picom
         ;;
 esac
