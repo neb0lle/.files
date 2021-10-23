@@ -2,7 +2,6 @@
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 nitrogen --restore &
 picom --experimental-backends &
-setxkbmap -option caps:swapescape &
 sxhkd &
 nm-applet &
 greenclip daemon &
