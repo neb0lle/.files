@@ -5,7 +5,7 @@ import os
 import subprocess
 from libqtile import qtile, bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
-from libqtile.dgroups import simple_key_binder
+# from libqtile.dgroups import simple_key_binder
 from libqtile.command import lazy
 from libqtile.lazy import lazy
 
@@ -178,6 +178,11 @@ groups = [
         Group("VIII",{'layout':'bsp'}),
         Group("IX",{'layout':'bsp'}),
         ]
+
+# Group hotkeys
+for i,j in enumerate(groups,1):
+    keys.append(Key([mod],str(i),lazy.group[j.name].toscreen()))
+    keys.append(Key([mod,"shift"],str(i),lazy.window.togroup(j.name,switch_group=True)))
 
 layout_theme = {
         "border_width":1,
@@ -407,7 +412,8 @@ floating_layout = layout.Floating(
             ])
 
 # Configuration Variables
-dgroups_key_binder = simple_key_binder(mod) # keybindings from group index
+# dgroups_key_binder = simple_key_binder(mod) # make fix & contrib
+dgroups_key_binder = None
 follow_mouse_focus = False
 bring_front_click = False
 cursor_warp = False
