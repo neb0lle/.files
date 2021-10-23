@@ -5,7 +5,7 @@ picom --experimental-backends &
 nm-applet &
 greenclip daemon &
 dunst &
-xbindkeys &
+sxhkd &
 flameshot &
 noisetorch -i &
 setxkbmap -option caps:swapescape &

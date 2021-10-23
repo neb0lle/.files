@@ -1,0 +1,39 @@
+/* Application bindings */
+super + Return
+	kitty
+Print
+	flameshot full -c
+ctrl + Print
+	flameshot gui
+super + b
+	brave
+super + f
+	nemo
+
+/* Rofi */
+super + Escape
+	/home/neville/.config/rofi/scripts/powermenu.sh
+super + space
+	rofi -theme '~/.config/rofi/themes/sed.rasi' -combi-modi window,drun -show combi -modi combi -window-format \{t\} -show-icons -display-combi 'run:'
+super + c
+	rofi -theme '~/.config/rofi/themes/sed.rasi' -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+super + equal
+	rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi/themes/sed.rasi -calc-command 'echo -n "\{result\}" | xclip -selection clipboard' -display-calc 'calculator:'
+super + p
+	rofi-pass
+
+/* Media */
+XF86AudioRaiseVolume
+	pactl -- set-sink-volume @DEFAULT_SINK@ +5%
+XF86AudioLowerVolume
+	pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+XF86AudioMute
+	pactl -- set-sink-mute @DEFAULT_SINK@ toggle
+XF86AudioNext
+	playerctl --all-players next
+XF86AudioPrev
+	playerctl --all-players previous
+XF86AudioPlay
+	playerctl --all-players play-pause
+XF86AudioStop
+	playerctl --all-players stop
