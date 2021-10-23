@@ -1,3 +1,42 @@
+! general
+*background: rgb:0/0/0
+*foreground: rgb:db/db/db
+
+! blacks
+*color0: rgb:49/49/49
+*color8: rgb:6d/6d/6d
+
+! reds
+*color1: rgb:ff/55/55
+*color9: rgb:ff/77/77
+
+! greens
+*color2: rgb:50/fa/7b
+*color10: rgb:73/fb/95
+
+! yellows
+*color3: rgb:ff/ff/66
+*color11: rgb:ff/ff/85
+
+! blues
+*color4: rgb:23/92/fb
+*color12: rgb:4f/a8/fc
+
+! magentas
+*color5: rgb:ff/77/cc
+*color13: rgb:ff/92/d6
+
+! cyans
+*color6: rgb:0/ff/ff
+*color14: rgb:33/ff/ff
+
+! whites
+*color7: rgb:db/db/db
+*color15: rgb:ff/ff/ff
+
 Sxiv.foreground: #ffffff
 Sxiv.background: #000000
 Sxiv.font: JetBrainsMono Nerd Font-10
+
+URxvt.font:xft:JetBrainsMono\ Nerd\ Font\ Mono:size=11
+URxvt.scrollBar: False
