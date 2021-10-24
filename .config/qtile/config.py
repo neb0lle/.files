@@ -382,7 +382,7 @@ screens = [
                     foreground=colors[6],
                     background=colors[3],
                     padding=10,
-                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('/home/neville/.config/rofi/scripts/powermenu.sh')},
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('/home/neville/.scripts/powermenu.sh')},
                     ),
             ],
             30,

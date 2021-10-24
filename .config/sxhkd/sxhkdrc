@@ -12,7 +12,7 @@ super + f
 
 /* Rofi */
 super + Escape
-	/home/neville/.config/rofi/scripts/powermenu.sh
+	/home/neville/.scripts/powermenu
 super + space
 	rofi -theme '~/.config/rofi/themes/sed.rasi' -combi-modi window,drun -show combi -modi combi -window-format \{t\} -show-icons -display-combi 'run:'
 super + c
