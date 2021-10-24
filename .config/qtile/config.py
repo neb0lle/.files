@@ -286,7 +286,11 @@ screens = [
                     background = colors[3],
                     foreground = colors[8],
                     padding = 8,
-                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('pavucontrol')},
+                    mouse_callbacks = {
+                        'Button1': lambda: qtile.cmd_spawn(
+                            terminal + ' /home/neville/.scripts/resize_fixer pulsemixer'
+                            )
+                        }
                     ),
                 widget.TextBox(
                     text = '|',
@@ -305,7 +309,11 @@ screens = [
                 widget.CPU(
                     foreground = colors[2],
                     background = colors[3],
-                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + ' -e bashtop')},
+                    mouse_callbacks = {
+                        'Button1': lambda: qtile.cmd_spawn(
+                            terminal + ' bashtop'
+                            )
+                        },
                     padding = 8
                     ),
                 widget.TextBox(
@@ -326,7 +334,11 @@ screens = [
                     measure_mem='M',
                     foreground = colors[5],
                     background = colors[3],
-                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + ' -e htop')},
+                    mouse_callbacks = {
+                        'Button1': lambda: qtile.cmd_spawn(
+                            terminal + ' /home/neville/.scripts/resize_fixer htop'
+                            )
+                        },
                     padding = 8
                     ),
                 widget.TextBox(
@@ -347,6 +359,14 @@ screens = [
                     foreground=colors[7],
                     background=colors[3],
                     format="%A %B %d - %H:%M",
+                    mouse_callbacks = {
+                        'Button1': lambda: qtile.cmd_spawn(
+                            '/home/neville/.scripts/cal_notify'
+                            ),
+                        'Button3': lambda: qtile.cmd_spawn(
+                            terminal + ' /home/neville/.scripts/resize_fixer calcurse'
+                            ),
+                        },
                     ),
                 widget.TextBox(
                     text = '|',
