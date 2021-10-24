@@ -8,4 +8,5 @@ greenclip daemon &
 dunst &
 flameshot &
 noisetorch -i &
+udiskie &
 sleep 5 && alttab -font "xft:JetBrainsMono Nerd Font-11" -fg "#ffffff" -bg "#000000" -frame "#ffffff" -t 100x100 -d 1 &
