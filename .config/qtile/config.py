@@ -75,9 +75,10 @@ keys = [
 
         # Toggle between different layouts as defined below
         Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
-        Key([mod],"y",lazy.window.toggle_floating(),desc="Toggle floating on focused window",),
-        Key([mod],"m",lazy.window.toggle_minimize(),desc="Toggle Minimize"),
-        Key([mod,"control"], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
+        Key([mod],"y", lazy.window.toggle_floating(),desc="Toggle floating on focused window",),
+        Key([mod],"m", lazy.window.toggle_maximize(),desc="Toggle Minimize"),
+        Key([mod, "shift"],"m", lazy.window.toggle_minimize(),desc="Toggle Minimize"),
+        Key([mod, "control"], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
         Key([mod], "Tab", lazy.next_layout(),desc="Toggle next layout"),
         Key([mod, "shift"], "Tab", lazy.prev_layout(),desc="Toggle previous layout"),
 
@@ -193,9 +194,8 @@ layout_theme = {
         }
 layouts = [
         layout.Bsp(**layout_theme,fair=False,name=''),
-        layout.Stack(num_stacks=1,margin=4,border_width=0,name='洛'),
+        layout.Max(name='洛'),
         layout.Stack(num_stacks=2,**layout_theme,name=''),
-        # layout.Max(**layout_theme),
         # layout.RatioTile(),
         # layout.Zoomy(),
         ]
@@ -394,6 +394,19 @@ screens = [
         right = bar.Gap(2),
     ),
 ]
+
+@hook.subscribe.layout_change
+def _(lay, grp):
+    if lay.name == "洛":
+        qtile.screens[0].top = bar.Gap(42)
+        qtile.screens[0].bottom = bar.Gap(6)
+        qtile.screens[0].left = bar.Gap(6)
+        qtile.screens[0].right = bar.Gap(6)
+    else:
+        qtile.screens[0].top = bar.Gap(38)
+        qtile.screens[0].bottom = bar.Gap(2)
+        qtile.screens[0].left = bar.Gap(2)
+        qtile.screens[0].right = bar.Gap(2)
 
 # Drag floating layouts.
 mouse = [
