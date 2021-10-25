@@ -36,7 +36,4 @@
 
 Sxiv.foreground: #ffffff
 Sxiv.background: #000000
-Sxiv.font: JetBrainsMono Nerd Font-10
-
-URxvt.font:xft:JetBrainsMono\ Nerd\ Font\ Mono:size=11
-URxvt.scrollBar: False
+*.font: JetBrainsMono\ Nerd\ Font:size=10:antialias=true:autohint=true;
