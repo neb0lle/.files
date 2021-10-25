@@ -45,6 +45,12 @@ def resize_up(qtile):
 def resize_down(qtile):
     resize(qtile, "down")
 
+def sed(qtile):
+    # if qtile.layout.name == '洛':
+    # qtile.restart()
+    qtile.currentGroup.tolayout('洛')
+
+
 keys = [
         # Switch between windows
         Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -76,9 +82,11 @@ keys = [
         # Toggle between different layouts as defined below
         Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
         Key([mod],"y", lazy.window.toggle_floating(),desc="Toggle floating on focused window",),
-        Key([mod],"m", lazy.window.toggle_maximize(),desc="Toggle Minimize"),
-        Key([mod, "shift"],"m", lazy.window.toggle_minimize(),desc="Toggle Minimize"),
         Key([mod, "control"], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
+
+        Key([mod],"m", lazy.function(sed),desc="Toggle Maximize"),
+
+        Key([mod, "shift"],"m", lazy.window.toggle_minimize(),desc="Toggle Minimize"),
         Key([mod], "Tab", lazy.next_layout(),desc="Toggle next layout"),
         Key([mod, "shift"], "Tab", lazy.prev_layout(),desc="Toggle previous layout"),
 
@@ -196,8 +204,6 @@ layouts = [
         layout.Bsp(**layout_theme,fair=False,name=''),
         layout.Max(name='洛'),
         layout.Stack(num_stacks=2,**layout_theme,name=''),
-        # layout.RatioTile(),
-        # layout.Zoomy(),
         ]
 
 widget_defaults = dict(
