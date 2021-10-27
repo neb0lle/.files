@@ -72,7 +72,7 @@ set termguicolors
 " set colorcolumn=80
 
 "   Lualine:
-lua << END
+lua << EOF
 local sed_theme = require'lualine.themes.auto'
 sed_theme.normal.a.bg = "#2392FB"
 sed_theme.visual.a.bg = "#9966ff"
@@ -83,26 +83,30 @@ require'lualine'.setup {
 		icons_enabled = true,
 		theme = sed_theme,
 		always_divide_middle = true,
+		section_separators = '',
+		component_separators = '',
 		},
 	extensions = {
 		'fugitive',
 		'fzf',
 		},
 	}
-END
+EOF
 
-"	CoC:
-source $HOME/.config/nvim/coc.vim
 
 "	Treesetter:
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
+	highlight = {
+	enable = true,
+	additional_vim_regex_highlighting = false,
+	},
 }
 EOF
+
+"	CoC:
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+source $HOME/.config/nvim/coc.vim
 
 "	Dashboard:
 highlight dashboardHeader ctermfg=8 guifg=grey
