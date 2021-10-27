@@ -7,13 +7,13 @@ call plug#begin()
 " Formatting:
 	" Plug 'sbdchd/neoformat'
 " Completion:
-	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Version Control:
 	Plug 'tpope/vim-fugitive'
 " Theme:
 	Plug 'lukas-reineke/indent-blankline.nvim'
 	Plug 'kyazdani42/nvim-web-devicons'
-	Plug 'famiu/feline.nvim'
+	Plug 'nvim-lualine/lualine.nvim'
 	Plug 'norcalli/nvim-colorizer.lua'
 	Plug 'glepnir/dashboard-nvim'
 " VimWiki:
@@ -71,11 +71,28 @@ set noshowmode
 set termguicolors
 " set colorcolumn=80
 
-lua <<EOF
-require('feline').setup{
-}
-EOF
+"   Lualine:
+lua << END
+local sed_theme = require'lualine.themes.auto'
+sed_theme.normal.a.bg = "#2392FB"
+sed_theme.visual.a.bg = "#9966ff"
+sed_theme.replace.a.bg = "#ff5555"
+sed_theme.normal.a.fg = "#000000"
+require'lualine'.setup {
+	options = {
+		icons_enabled = true,
+		theme = sed_theme,
+		always_divide_middle = true,
+		},
+	extensions = {
+		'fugitive',
+		'fzf',
+		},
+	}
+END
 
+"	CoC:
+source $HOME/.config/nvim/coc.vim
 
 "	Treesetter:
 lua <<EOF
