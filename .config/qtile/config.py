@@ -432,7 +432,7 @@ screens = [
                     padding=10,
                     mouse_callbacks={
                         "Button1": lambda: qtile.cmd_spawn(
-                            "/home/neville/.scripts/powermenu.sh"
+                            "/home/neville/.scripts/powermenu"
                         )
                     },
                 ),

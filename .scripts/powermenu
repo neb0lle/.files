@@ -12,7 +12,7 @@ suspend="suspend"
 logout="logout"
 
 # variable passed to rofi
-options="$lock\n$logout\n$shutdown\n$suspend\n$reboot\nFFC-on\nFFC-off"
+options="$lock\n$logout\n$shutdown\n$suspend\n$reboot\ngame"
 
 chosen="$(echo -e "$options" | $rofi_command -p "神  $uptime:" -dmenu)"
 case $chosen in
@@ -32,13 +32,18 @@ case $chosen in
     $logout)
         qtile cmd-obj -o cmd -f shutdown
         ;;
-    'FFC-on')
-        nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
-		killall picom
-		picom --experimental-backends &
-        ;;
-    'FFC-off')
-        nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = Off }"
-		killall picom
+    'game')
+		if [ -z $(pidof picom) ]
+		then
+			printf "picom not running\n"
+			nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }" &
+			picom --experimental-backends &
+			printf "FFC on\nkilled picom\nstarted picom\n"
+		else
+			printf "picom running\n"
+			nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = Off }" &
+			killall picom &
+			printf "FFC off\nkilled picom\n"
+		fi
         ;;
 esac
