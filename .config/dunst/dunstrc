@@ -110,7 +110,7 @@
 
     ### Text ###
 
-    font = JetBrainsMono Nerd Font Medium 10
+    font = JetBrainsMono Nerd Font 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -176,7 +176,7 @@
     stack_duplicates = true
 
     # Hide the count of stacked notifications with the same content
-    hide_duplicate_count = false
+    hide_duplicate_count = true
 
     # Display indicators for URLs (U) and actions (A).
     show_indicators = yes
