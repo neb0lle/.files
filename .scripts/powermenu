@@ -10,9 +10,10 @@ reboot="reboot"
 lock="lock"
 suspend="suspend"
 logout="logout"
+game="game"
 
 # variable passed to rofi
-options="$lock\n$logout\n$shutdown\n$suspend\n$reboot\ngame"
+options="$lock\n$logout\n$shutdown\n$suspend\n$reboot\n$game"
 
 chosen="$(echo -e "$options" | $rofi_command -p "神  $uptime:" -dmenu)"
 case $chosen in
@@ -32,7 +33,7 @@ case $chosen in
     $logout)
         qtile cmd-obj -o cmd -f shutdown
         ;;
-    'game')
+	$game)
 		if [ -z $(pidof picom) ]
 		then
 			printf "picom not running\n"
