@@ -122,7 +122,6 @@ alias l='ls -CF'
 alias wiki='vim -c ":VimwikiIndex"'
 alias py='python3'
 alias cf='cowsay "sed"'
-alias mute='dunstctl set-paused toggle'
 alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
 
 # fzf

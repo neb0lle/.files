@@ -326,6 +326,27 @@ screens = [
                     fontsize=20,
                 ),
                 widget.TextBox(
+                    text=" ",
+                    background=colors[3],
+                    foreground=colors[4],
+                    padding=0,
+                    fontsize=20,
+                    mouse_callbacks={
+                        "Button1": lambda: qtile.cmd_spawn("dunstctl history-pop"),
+                        "Button2": lambda: qtile.cmd_spawn(
+                            "dunstctl set-paused toggle"
+                        ),
+                        "Button3": lambda: qtile.cmd_spawn("dunstctl history-pop"),
+                    },
+                ),
+                widget.TextBox(
+                    text="|",
+                    background=colors[3],
+                    foreground=colors[4],
+                    padding=-3,
+                    fontsize=20,
+                ),
+                widget.TextBox(
                     text="  ",
                     foreground=colors[8],
                     background=colors[3],
@@ -433,7 +454,7 @@ screens = [
                     mouse_callbacks={
                         "Button1": lambda: qtile.cmd_spawn(
                             "/home/neville/.scripts/powermenu"
-                        )
+                        ),
                     },
                 ),
             ],
