@@ -39,11 +39,13 @@ case $chosen in
 			printf "picom not running\n"
 			nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }" &
 			picom --experimental-backends &
+			dunstify 'game mode on'
 			printf "FFC on\nkilled picom\nstarted picom\n"
 		else
 			printf "picom running\n"
 			nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = Off }" &
 			killall picom &
+			dunstify 'game mode off'
 			printf "FFC off\nkilled picom\n"
 		fi
         ;;
