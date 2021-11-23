@@ -1,0 +1,48 @@
+# vim: filetype=conf
+
+ncmpcpp_directory = "~/.config/ncmpcpp"
+lyrics_directory = "~/.local/share/lyrics"
+mpd_music_dir = "~/Music/sed/"
+message_delay_time = "1"
+startup_screen = "playlist"
+
+header_visibility = yes
+titles_visibility = no
+statusbar_visibility = yes
+follow_now_playing_lyrics = yes
+display_volume_level = yes
+cyclic_scrolling = yes
+autocenter_mode = yes
+centered_cursor = yes
+volume_change_step = 5
+playlist_disable_highlight_delay = 1
+
+now_playing_prefix = "$b$2 ♫"
+now_playing_suffix = "$/b "
+current_item_prefix = "$b$8❯$/b $9"
+current_item_suffix = "$/b "
+selected_item_prefix="$4"
+
+playlist_display_mode = "classic" (classic/columns)
+song_window_title_format = "{%t} -- {%a} {"%b" (%y)}"
+song_list_format = "$5 %t $R$3 %a   $6 %l "
+song_columns_list_format = "(2f)[5]{} (4f)[5]{n} (2f)[8]{} (25)[8]{t} (2f)[7]{} (20)[7]{a} (25)[7]{b} (6f)[7]{y} (7f)[5]{lr} (1f)[5]{}"
+song_status_format = {{$4"%t"}} $6| {$4%a{ $6| $4%b{ $6| $4%y}} $3}
+
+progressbar_look = "━━━"
+visualizer_in_stereo = yes
+visualizer_type = spectrum
+visualizer_autoscale = yes
+visualizer_look = ●▮
+visualizer_spectrum_smooth_look = no
+visualizer_color = 3,4,4,2,2
+# visualizer_color = 240,245,250,2
+main_window_color = 5
+statusbar_color = 7
+progressbar_color = 1
+progressbar_elapsed_color = 8
+statusbar_time_color = 2
+volume_color = 4
+header_window_color = 8
+state_line_color = 240
+state_flags_color = 7
