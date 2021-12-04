@@ -1,0 +1,39 @@
+#!/bin/bash
+
+cd ~/Music/sed/
+
+declare -A playlists
+
+playlists["Electro"]="https://open.spotify.com/playlist/4B5nm6Bb7L2oX1J8ZlVFMI"
+playlists["R&B"]="https://open.spotify.com/playlist/3yInbP2vA4QoTMRjS6gWwl"
+playlists["HipHop"]="https://open.spotify.com/playlist/52bEg764OjYcIRFnEO420a"
+playlists["Gaming"]="https://open.spotify.com/playlist/0YP3b6TswBYnmoJqonjilW"
+playlists["LoFi"]="https://open.spotify.com/playlist/5hsXUNwWGWzv75JVDzp4vq" 
+playlists["Pop"]="https://open.spotify.com/playlist/6stOg8tt7jNJIgTAqbMOD9"
+playlists["Synthwave"]="https://open.spotify.com/playlist/7E1vlkEKIiiURW4vvKlHVn"
+playlists["Funk"]="https://open.spotify.com/playlist/4wPq04dtOf2gc1mWpI82SH"
+playlists["Piano"]="https://open.spotify.com/playlist/6GCSEsDXyi210qWoJ5O2Wd"
+playlists["Hindi"]="https://open.spotify.com/playlist/3y3EJa3VIq7oi6TARm2rY6"
+playlists["J-Pop"]="https://open.spotify.com/playlist/7aE0Zrfezk9GtS1hf5LYvv"
+playlists["Jazz"]="https://open.spotify.com/playlist/3rqfvSB5tgWlAit8gUum4T"
+playlists["Classical"]="https://open.spotify.com/playlist/78d140psD0MoBIzrjNGojA"
+playlists["Punk"]="https://open.spotify.com/playlist/1gDZgzyYZ2a6i3pPDClTKH"
+playlists["Rock Lite"]="https://open.spotify.com/playlist/1Rzsq4XcxdkW1dH0nzra4Z"
+playlists["Country"]="https://open.spotify.com/playlist/1gn8BC17fq7GpUTinQao2p"
+playlists["Rock"]="https://open.spotify.com/playlist/6VfFXzNMoQExvLZnN2kjzW"
+playlists["Dream Pop"]="https://open.spotify.com/playlist/3RbZf5szmp8es60m9N6awv"
+playlists["Terraria"]="https://open.spotify.com/playlist/7CJ4cbN9p22pwlVqCs7FgJ"
+playlists["Minecraft"]="https://open.spotify.com/playlist/37n6LB24fBdbbyDhyov842"
+
+for i in  "${!playlists[@]}"
+do 
+	if [ -d "$i" ]
+	then
+		cd "$i"
+	else
+		mkdir "$i"
+		cd "$i"
+	fi
+	spotdl "${playlists[$i]}"
+	cd ..
+done
