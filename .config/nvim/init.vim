@@ -7,7 +7,7 @@ call plug#begin()
 " Formatting:
 	" Plug 'sbdchd/neoformat'
 " Completion:
-	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Version Control:
 	Plug 'tpope/vim-fugitive'
 " Theme:
@@ -108,8 +108,7 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 "	CoC:
-" command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-" source $HOME/.config/nvim/coc.vim
+source $HOME/.config/nvim/coc.vim
 
 "	Dashboard:
 highlight dashboardHeader ctermfg=8 guifg=grey

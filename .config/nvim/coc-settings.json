@@ -1,6 +1,6 @@
 {
 	"coc.preferences.formatOnType": true,
-	"coc.preferences.formatOnSaveFiletypes": ["python"],
+	"coc.preferences.formatOnSaveFiletypes": ["python","c", "cc", "cpp", "c++", "objc", "objcpp"],
 	"languageserver": {
 		"ccls": {
 			"command": "ccls",
@@ -13,5 +13,5 @@
 			}
 		}
 	},
-	"python.formatting.provider": "black",
+	"python.formatting.provider": "black"
 }
