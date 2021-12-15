@@ -246,7 +246,7 @@ layout_theme = {
 }
 layouts = [
     layout.Bsp(**layout_theme, fair=False, name=""),
-    layout.Max(name="洛"),
+    layout.Stack(num_stacks=1, **layout_theme, name="洛"),
     layout.Stack(num_stacks=2, **layout_theme, name=""),
 ]
 
@@ -467,19 +467,6 @@ screens = [
         right=bar.Gap(2),
     ),
 ]
-
-@hook.subscribe.layout_change
-def _(lay, grp):
-    if lay.name == "洛":
-        qtile.screens[0].top = bar.Gap(42)
-        qtile.screens[0].bottom = bar.Gap(6)
-        qtile.screens[0].left = bar.Gap(6)
-        qtile.screens[0].right = bar.Gap(6)
-    else:
-        qtile.screens[0].top = bar.Gap(38)
-        qtile.screens[0].bottom = bar.Gap(2)
-        qtile.screens[0].left = bar.Gap(2)
-        qtile.screens[0].right = bar.Gap(2)
 
 # Drag floating layouts.
 mouse = [
