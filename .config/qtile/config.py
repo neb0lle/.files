@@ -468,7 +468,6 @@ screens = [
     ),
 ]
 
-
 @hook.subscribe.layout_change
 def _(lay, grp):
     if lay.name == "洛":
@@ -481,7 +480,6 @@ def _(lay, grp):
         qtile.screens[0].bottom = bar.Gap(2)
         qtile.screens[0].left = bar.Gap(2)
         qtile.screens[0].right = bar.Gap(2)
-
 
 # Drag floating layouts.
 mouse = [

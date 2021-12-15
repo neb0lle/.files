@@ -7,5 +7,5 @@ nm-applet &
 greenclip daemon &
 dunst &
 flameshot &
-# noisetorch -i &
+noisetorch -i &
 udiskie &
