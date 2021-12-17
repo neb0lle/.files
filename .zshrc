@@ -113,14 +113,13 @@ path+=("/Users/neville/.scripts")
 export PATH
 
 # aliases
-alias vim='nvim'
 alias ls='ls -Gh --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias vim='nvim'
 alias wiki='vim -c ":VimwikiIndex"'
 alias py='python3'
-alias cf='cowsay "sed"'
 alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
 
 # fzf

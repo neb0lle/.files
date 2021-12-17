@@ -455,6 +455,9 @@ screens = [
                         "Button1": lambda: qtile.cmd_spawn(
                             "/home/neville/.scripts/powermenu"
                         ),
+                        "Button3": lambda: qtile.cmd_spawn(
+                            "/home/neville/.scripts/notifications_toggle" 
+                        ),
                     },
                 ),
             ],
