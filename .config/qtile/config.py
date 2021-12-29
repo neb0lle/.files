@@ -232,7 +232,7 @@ groups = [
 
 # Group hotkeys
 for i, j in enumerate(groups, 1):
-    keys.append(Key([mod], str(i), lazy.group[j.name].toscreen()))
+    keys.append(Key([mod], str(i), lazy.group[j.name].toscreen(toggle=True)))
     keys.append(
         Key([mod, "shift"], str(i), lazy.window.togroup(j.name, switch_group=True))
     )

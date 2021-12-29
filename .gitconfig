@@ -2,8 +2,9 @@
 	name = NevilleJS
 	email = nevillejs24@gmail.com
 [diff]
-	tool = nvimdiff
+	tool = vimdiff
 [merge]
-	tool = nvimdiff
+	tool = vimdiff
 [difftool]
+	tool = vimdiff
 	prompt = false
