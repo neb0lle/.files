@@ -5,6 +5,7 @@ cd ~/Music/sed/
 declare -A playlists
 
 playlists["Electro"]="https://open.spotify.com/playlist/4B5nm6Bb7L2oX1J8ZlVFMI"
+playlists["Phonk"]="https://open.spotify.com/playlist/4B5nm6Bb7L2oX1J8ZlVFMI"
 playlists["R&B"]="https://open.spotify.com/playlist/3yInbP2vA4QoTMRjS6gWwl"
 playlists["HipHop"]="https://open.spotify.com/playlist/52bEg764OjYcIRFnEO420a"
 playlists["Gaming"]="https://open.spotify.com/playlist/0YP3b6TswBYnmoJqonjilW"
