@@ -444,18 +444,18 @@ screens = [
                     padding=-3,
                     fontsize=20,
                 ),
-                widget.Battery(
-                    foreground=colors[1],
-                    background=colors[3],
-                    format="{percent:1.0%}"
-                        ),
-                widget.TextBox(
-                    text="|",
-                    background=colors[3],
-                    foreground=colors[4],
-                    padding=-3,
-                    fontsize=20,
-                ),
+                # widget.Battery(
+                #     foreground=colors[1],
+                #     background=colors[3],
+                #     format="{percent:1.0%}"
+                #         ),
+                # widget.TextBox(
+                #     text="|",
+                #     background=colors[3],
+                #     foreground=colors[4],
+                #     padding=-3,
+                #     fontsize=20,
+                # ),
                 widget.QuickExit(
                     default_text="⏻ ",
                     countdown_format="{}",
