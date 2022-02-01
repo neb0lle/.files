@@ -1,0 +1,5 @@
+#!/bin/bash
+cd ~/Downloads
+aria2c --enable-rpc --rpc-listen-all &> /dev/null &
+aria2p
+killall aria2c
