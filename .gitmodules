@@ -1,0 +1,8 @@
+[submodule ".scripts"]
+	path = .scripts
+	url = git@github.com:s3dman/scripts.git
+	branch = master
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = git@github.com:s3dman/nvim.git
+	branch = master
