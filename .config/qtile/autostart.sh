@@ -10,3 +10,6 @@ dunst &
 flameshot &
 noisetorch -i &
 udiskie &
+
+xinput set-prop 18 346 1 &
+xinput set-prop 11 342 1 &

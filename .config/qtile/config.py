@@ -1,5 +1,7 @@
 # https://github.com/NevilleJS/dotfiles
 
+system_username = 'neville'
+
 from typing import List  # noqa: F401
 import os
 import subprocess
@@ -359,7 +361,7 @@ screens = [
                     padding=8,
                     mouse_callbacks={
                         "Button1": lambda: qtile.cmd_spawn(
-                            terminal + " /home/neville/.scripts/resize_fixer pulsemixer"
+                            terminal + f" /home/{system_username}/.scripts/resize_fixer pulsemixer"
                         )
                     },
                 ),
@@ -405,7 +407,7 @@ screens = [
                     background=colors[3],
                     mouse_callbacks={
                         "Button1": lambda: qtile.cmd_spawn(
-                            terminal + " /home/neville/.scripts/resize_fixer htop"
+                            terminal + f" /home/{system_username}/.scripts/resize_fixer htop"
                         )
                     },
                     padding=8,
@@ -430,10 +432,10 @@ screens = [
                     format="%A %B %d - %H:%M",
                     mouse_callbacks={
                         "Button1": lambda: qtile.cmd_spawn(
-                            "/home/neville/.scripts/cal_notify"
+                            f"/home/{system_username}/.scripts/cal_notify"
                         ),
                         "Button3": lambda: qtile.cmd_spawn(
-                            terminal + " /home/neville/.scripts/resize_fixer calcurse"
+                            terminal + f" /home/{system_username}/.scripts/resize_fixer calcurse"
                         ),
                     },
                 ),
@@ -444,18 +446,18 @@ screens = [
                     padding=-3,
                     fontsize=20,
                 ),
-                # widget.Battery(
-                #     foreground=colors[1],
-                #     background=colors[3],
-                #     format="{percent:1.0%}"
-                #         ),
-                # widget.TextBox(
-                #     text="|",
-                #     background=colors[3],
-                #     foreground=colors[4],
-                #     padding=-3,
-                #     fontsize=20,
-                # ),
+                widget.Battery(
+                    foreground=colors[1],
+                    background=colors[3],
+                    format="{percent:1.0%}"
+                        ),
+                widget.TextBox(
+                    text="|",
+                    background=colors[3],
+                    foreground=colors[4],
+                    padding=-3,
+                    fontsize=20,
+                ),
                 widget.QuickExit(
                     default_text="⏻ ",
                     countdown_format="{}",
@@ -465,10 +467,10 @@ screens = [
                     padding=10,
                     mouse_callbacks={
                         "Button1": lambda: qtile.cmd_spawn(
-                            "/home/neville/.scripts/powermenu"
+                            f"/home/{system_username}/.scripts/powermenu"
                         ),
                         "Button3": lambda: qtile.cmd_spawn(
-                            "/home/neville/.scripts/notifications_toggle" 
+                            f"/home/{system_username}/.scripts/notifications_toggle" 
                         ),
                     },
                 ),
