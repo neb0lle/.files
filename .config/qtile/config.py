@@ -449,7 +449,7 @@ screens = [
                 widget.Battery(
                     foreground=colors[1],
                     background=colors[3],
-                    format="{percent:1.0%}"
+                    format=" {percent:1.0%}"
                         ),
                 widget.TextBox(
                     text="|",
