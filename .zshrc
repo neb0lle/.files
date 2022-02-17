@@ -108,7 +108,7 @@ export TRUEBROWSER='brave'
 export BAT_THEME='base16-256'
 
 # PATH
-export PATH="/opt/homebrew/bin:$PATH"
+# export PATH="/opt/homebrew/bin:$PATH"
 # path+=("/Users/neville/.scripts")
 path+=("/home/neville/.scripts")
 export PATH
