@@ -35,3 +35,9 @@ XF86AudioPlay
 	playerctl --all-players play-pause
 XF86AudioStop
 	playerctl --all-players stop
+
+/* Media */
+XF86MonBrightnessUp
+	xbacklight -inc 5
+XF86MonBrightnessDown
+	xbacklight -dec 5
