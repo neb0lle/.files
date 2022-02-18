@@ -320,27 +320,6 @@ screens = [
                     foreground=colors[3],
                     linewidth=1,
                 ),
-                # widget.TextBox(
-                #     text="|",
-                #     background=colors[3],
-                #     foreground=colors[4],
-                #     padding=-3,
-                #     fontsize=20,
-                # ),
-                # widget.TextBox(
-                #     text=" ",
-                #     background=colors[3],
-                #     foreground=colors[4],
-                #     padding=0,
-                #     fontsize=20,
-                #     mouse_callbacks={
-                #         "Button1": lambda: qtile.cmd_spawn("dunstctl history-pop"),
-                #         "Button2": lambda: qtile.cmd_spawn(
-                #             "dunstctl set-paused toggle"
-                #         ),
-                #         "Button3": lambda: qtile.cmd_spawn("dunstctl history-pop"),
-                #     },
-                # ),
                 widget.TextBox(
                     text="|",
                     background=colors[3],
@@ -350,20 +329,40 @@ screens = [
                 ),
                 widget.TextBox(
                     text="  ",
-                    foreground=colors[8],
+                    foreground=colors[2],
                     background=colors[3],
                     padding=-3,
                     fontsize=16,
                 ),
                 widget.Volume(
                     background=colors[3],
-                    foreground=colors[8],
+                    foreground=colors[1],
                     padding=8,
                     mouse_callbacks={
                         "Button1": lambda: qtile.cmd_spawn(
                             terminal + f" /home/{system_username}/.scripts/resize_fixer pulsemixer"
                         )
                     },
+                ),
+                widget.TextBox(
+                    text="|",
+                    background=colors[3],
+                    foreground=colors[4],
+                    padding=-3,
+                    fontsize=20,
+                ),
+                widget.TextBox(
+                    text="  ",
+                    foreground=colors[2],
+                    background=colors[3],
+                    padding=-3,
+                    fontsize=16,
+                ),
+                widget.Backlight(
+                    background=colors[3],
+                    foreground=colors[1],
+                    backlight_name='intel_backlight',
+                    format="{percent:2.0%}",
                 ),
                 widget.TextBox(
                     text="|",
@@ -380,7 +379,7 @@ screens = [
                     fontsize=14,
                 ),
                 widget.CPU(
-                    foreground=colors[2],
+                    foreground=colors[1],
                     background=colors[3],
                     mouse_callbacks={
                         "Button1": lambda: qtile.cmd_spawn(terminal + " bashtop")
@@ -396,14 +395,14 @@ screens = [
                 ),
                 widget.TextBox(
                     text="  ",
-                    foreground=colors[5],
+                    foreground=colors[2],
                     background=colors[3],
                     padding=0,
                     fontsize=14,
                 ),
                 widget.Memory(
                     measure_mem="M",
-                    foreground=colors[5],
+                    foreground=colors[1],
                     background=colors[3],
                     mouse_callbacks={
                         "Button1": lambda: qtile.cmd_spawn(
@@ -421,13 +420,13 @@ screens = [
                 ),
                 widget.TextBox(
                     text="  ",
-                    foreground=colors[7],
+                    foreground=colors[2],
                     background=colors[3],
                     padding=0,
                     fontsize=14,
                 ),
                 widget.Clock(
-                    foreground=colors[7],
+                    foreground=colors[1],
                     background=colors[3],
                     format="%A %B %d - %H:%M",
                     mouse_callbacks={
@@ -447,7 +446,7 @@ screens = [
                     fontsize=20,
                 ),
                 widget.Battery(
-                    foreground=colors[1],
+                    foreground=colors[2],
                     background=colors[3],
                     charge_char='',
                     discharge_char='',
@@ -455,9 +454,19 @@ screens = [
                     empty_char='',
                     unknown_char='',
                     low_foreground=colors[6],
+                    padding=5,
                     notify_below=0.1,
                     update_interval=5,
-                    format="{char} {percent:1.0%}",
+                    format="{char}",
+                    fontsize=17,
+                        ),
+                widget.Battery(
+                    foreground=colors[1],
+                    background=colors[3],
+                    low_foreground=colors[6],
+                    update_interval=5,
+                    padding=5,
+                    format="{percent:1.0%}",
                         ),
                 widget.TextBox(
                     text="|",

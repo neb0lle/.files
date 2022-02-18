@@ -38,6 +38,6 @@ XF86AudioStop
 
 /* Media */
 XF86MonBrightnessUp
-	xbacklight -inc 5
+	xbacklight -inc 1
 XF86MonBrightnessDown
-	xbacklight -dec 5
+	xbacklight -dec 1
