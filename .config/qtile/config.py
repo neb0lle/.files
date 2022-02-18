@@ -449,7 +449,15 @@ screens = [
                 widget.Battery(
                     foreground=colors[1],
                     background=colors[3],
-                    format=" {percent:1.0%}"
+                    charge_char='',
+                    discharge_char='',
+                    full_char='',
+                    empty_char='',
+                    unknown_char='',
+                    low_foreground=colors[6],
+                    notify_below=0.1,
+                    update_interval=5,
+                    format="{char} {percent:1.0%}",
                         ),
                 widget.TextBox(
                     text="|",
