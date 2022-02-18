@@ -108,8 +108,6 @@ export TRUEBROWSER='brave'
 export BAT_THEME='base16-256'
 
 # PATH
-# export PATH="/opt/homebrew/bin:$PATH"
-# path+=("/Users/neville/.scripts")
 path+=("/home/neville/.scripts")
 export PATH
 
@@ -125,7 +123,6 @@ alias py='python3'
 alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
 
 # fzf
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden -p .gitignore -g ""'
@@ -137,4 +134,3 @@ eval "$(starship init zsh)"
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-# source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
