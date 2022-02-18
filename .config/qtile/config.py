@@ -454,10 +454,10 @@ screens = [
                     empty_char='',
                     unknown_char='',
                     low_foreground=colors[6],
-                    padding=5,
+                    padding=0,
                     notify_below=0.1,
                     update_interval=5,
-                    format="{char}",
+                    format=" {char}",
                     fontsize=17,
                         ),
                 widget.Battery(
@@ -465,7 +465,6 @@ screens = [
                     background=colors[3],
                     low_foreground=colors[6],
                     update_interval=5,
-                    padding=5,
                     format="{percent:1.0%}",
                         ),
                 widget.TextBox(
