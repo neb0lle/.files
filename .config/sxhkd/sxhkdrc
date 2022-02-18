@@ -11,7 +11,7 @@ super + f
 	nemo
 
 /* Rofi */
-super + Escape
+super + p
 	/home/$USER/.scripts/powermenu
 super + space
 	rofi -theme '~/.config/rofi/themes/sed.rasi' -combi-modi window,drun -show combi -modi combi -window-format \{t\} -show-icons -display-combi 'run:'

@@ -185,7 +185,7 @@ def show_keys(keys):
         ["[S] + b", "Open Browser"],
         ["PrtScr", "Fullscreen Screenshot"],
         ["[Ctl] + PrtScr", "Screenshot"],
-        ["[S] + Escape", "Powermenu"],
+        ["[S] + p", "Powermenu"],
     ]
     for i in xbind_keys:
         key_help += "{:<30} {}".format(i[0], i[1] + "\n")
