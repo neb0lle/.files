@@ -201,7 +201,7 @@ keys.extend(
             lazy.spawn(
                 "sh -c 'echo \""
                 + show_keys(keys)
-                + '" | rofi -dmenu -i -mesg "Keyboard shortcuts"\''
+                + '" | rofi -dmenu -theme ~/.config/rofi/themes/help_menu.rasi -i -mesg "Keyboard shortcuts"\''
             ),
             desc="Print keyboard bindings",
         )
@@ -448,6 +448,7 @@ screens = [
                 widget.Battery(
                     foreground=colors[2],
                     background=colors[3],
+                    show_short_text=False,
                     charge_char='',
                     discharge_char='',
                     full_char='',
@@ -464,6 +465,7 @@ screens = [
                     foreground=colors[1],
                     background=colors[3],
                     low_foreground=colors[6],
+                    show_short_text=False,
                     update_interval=5,
                     format="{percent:1.0%}",
                         ),
