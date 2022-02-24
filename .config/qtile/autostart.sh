@@ -6,6 +6,7 @@ xwallpaper --maximize ~/Pictures/Wallpapers/wallpaper.png &
 picom --experimental-backends &
 sxhkd &
 nm-applet &
+blueman-applet &
 greenclip daemon &
 dunst &
 flameshot &
