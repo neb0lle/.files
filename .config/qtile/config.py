@@ -1,6 +1,6 @@
 # https://github.com/NevilleJS/dotfiles
 
-system_username = 'neville'
+system_username = "neville"
 
 from typing import List  # noqa: F401
 import os
@@ -340,7 +340,8 @@ screens = [
                     padding=8,
                     mouse_callbacks={
                         "Button1": lambda: qtile.cmd_spawn(
-                            terminal + f" /home/{system_username}/.scripts/resize_fixer pulsemixer"
+                            terminal
+                            + f" /home/{system_username}/.scripts/resize_fixer pulsemixer"
                         )
                     },
                 ),
@@ -406,7 +407,8 @@ screens = [
                     background=colors[3],
                     mouse_callbacks={
                         "Button1": lambda: qtile.cmd_spawn(
-                            terminal + f" /home/{system_username}/.scripts/resize_fixer htop"
+                            terminal
+                            + f" /home/{system_username}/.scripts/resize_fixer htop"
                         )
                     },
                     padding=8,
@@ -434,7 +436,8 @@ screens = [
                             f"/home/{system_username}/.scripts/cal_notify"
                         ),
                         "Button3": lambda: qtile.cmd_spawn(
-                            terminal + f" /home/{system_username}/.scripts/resize_fixer calcurse"
+                            terminal
+                            + f" /home/{system_username}/.scripts/resize_fixer calcurse"
                         ),
                     },
                 ),
@@ -488,7 +491,7 @@ screens = [
                             f"/home/{system_username}/.scripts/powermenu"
                         ),
                         "Button3": lambda: qtile.cmd_spawn(
-                            f"/home/{system_username}/.scripts/notifications_toggle" 
+                            f"/home/{system_username}/.scripts/notifications_toggle"
                         ),
                     },
                 ),
@@ -542,7 +545,7 @@ floating_layout = layout.Floating(
         Match(title="pinentry"),  # GPG key password entry
         Match(title="Qalculate"),
         Match(func=lambda c: c.has_fixed_size()),  # mpv fix
-    ]
+    ],
 )
 
 # Configuration Variables
