@@ -8,3 +8,5 @@
 [difftool]
 	tool = vimdiff
 	prompt = false
+[mergetool "vimdiff"]
+	path = nvim
