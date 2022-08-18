@@ -121,7 +121,7 @@ keys = [
     Key([mod, "shift"], "Tab", lazy.prev_layout(), desc="Toggle previous layout"),
     # Qtile
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
-    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([mod, "mod1"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     # Group Changer
     Key([mod, "control"], "l", lazy.screen.next_group(), desc="Switch to next group"),
     Key(
