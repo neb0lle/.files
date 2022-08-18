@@ -85,8 +85,8 @@ super + ctrl + {h,l}
 	bspc desktop -f {prev,next}.local
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}' --follow
+super + {_,shift + }{1-9}
+	bspc {desktop -f,node -d} {1-9} --follow
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
