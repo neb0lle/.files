@@ -1,6 +1,8 @@
 /* Application bindings */
 super + Return
 	kitty
+super + b
+	brave
 Print
 	flameshot full -c
 ctrl + Print 
