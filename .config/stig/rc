@@ -1,0 +1,6 @@
+tab ls active|!complete
+tab ls -c status,seeds,ratio,size,uploaded,path,name
+tab -t peers lsp -s torrent
+tab ls stopped -s ratio,path -c size,%downloaded,seeds,ratio,activity,completed,path,name
+tab ls isolated -c error,tracker,path,name -s tracker
+tab --focus 1

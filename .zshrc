@@ -120,6 +120,7 @@ alias vim='nvim'
 alias mal='trackma-curses'
 alias wiki='vim -c ":VimwikiIndex"'
 alias py='python3'
+alias tsm='transmission-remote'
 alias config='/usr/bin/git --git-dir=/home/neville/.cfg/ --work-tree=/home/neville'
 
 # fzf
