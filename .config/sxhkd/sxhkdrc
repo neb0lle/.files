@@ -60,11 +60,15 @@ super + g
 super + {t,shift + t,shift + f,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-#TODO set the node flags
-/* super + ctrl + {m,x,y,z} */
-/* 	bspc node -g {marked,locked,sticky,private} */
-/* super + shift + {m} */
-/* 	bspc node -g {hidden} */
+# Sticky & Locked windows
+super + {_,shift + }s
+	bspc node -g {sticky,locked}
+
+# Hide/Unhide windows
+super + v
+	bspc node -g hidden
+super + shift + {v}
+	bspc node {,$(bspc query -N -n .hidden | tail -n1)} -g hidden=off
 
 # Rotate the tree from the current nodes parent
 super + control + {k, j}
